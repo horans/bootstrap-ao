@@ -1,0 +1,13 @@
+/** container **/
+.container-full { margin:0 auto; position:relative; }
+
+/* text */
+.text-compact { line-height:1.3; }
+.text-gray { color:#999; }
+.text-white { color:#fff; }
+
+/** row **/
+.row-table { display:table; width:100%; }
+.row-table > div { display:table-cell; float:none; vertical-align:middle; }
+.row-compact { margin-left:0; margin-right:0; }
+.row-compact > div { padding-left:0; padding-right:0; }
