@@ -1,8 +1,8 @@
 # bootstrap-ao
-(bootstrap) (a)dd (o)n components for common use.
+(bootstrap) (a)dd (o)n components for common use
 
-### varibles and functions
-#### varibles
+## js: varibles and functions
+### varibles
 * `bWidth`  
 type: *varible (interger, get on load)*  
 description: current browser width  
@@ -22,11 +22,11 @@ related: `bWidth` `bHeight`
 type: *varible (boolean, set by user)*  
 description: no backward mode (default value is "false") 
 
-#### functions
+### functions
 * `notice(type, status, action, stay)`  
 description: display notices on top of screen, hide in 3.5 seconds  
 dependency: `#shoulder` on page  
-return: current notice index, worked with `notice_change()`
+return: current notice index, worked with `notice_change()`  
 parameter:
   * type, string (`primary`/default `success` `info` `warning` `danger`)  
   * status, string (current status)  
@@ -38,7 +38,6 @@ description: change notice content
 dependency: `#shoulder` on page, `notice()` return value  
 return: none  
 parameter:
-  * 
   * type, string (`primary`/default `success` `info` `warning` `danger`)  
   * status, string (current status)  
   * action, string (suggested action)  
@@ -57,14 +56,14 @@ dependency: none
 return: none  
 parameter: none  
 
-* `gotoTop()`
+* `gotoTop()`  
 description: scroll to page top  
 dependency: none  
 return: none  
 parameter: none  
 
 * `urlChng(param, value, push)`  
-description: update url query string
+description: update url query string  
 dependency: [url()](https://github.com/websanova/js-url)  
 return: none  
 parameter:
@@ -78,20 +77,20 @@ dependency: element with `squeeze` class
 return: none  
 parameter:
   * element, jQuery object  
-  * speed, string (`fast` or `slow`)  
+  * speed, string (`fast` `slow`)  
 
-#### other
+### other
 * auto reload on orientation change (for mobile device)
 * add tooltip to links with `inactive` class, and stop page jumping
 
-### style classes and tweaks
-#### custom component
-##### container
+## css: style classes and tweaks
+### custom component
+#### container
 * `container-full`  
 description: always occupies 100% width of its parent element, similar to `container-fluid`, but ignore container size  
 related: `container` `container-fluid`
 
-##### position
+#### position
 * `fixed`  
 description: fixed position, top of the browser   
 related: `fixed-bottom`
@@ -112,7 +111,7 @@ related: `center-h` `center-e`
 description: horizontal or/and vertical centered to its parent element with `center-h` or/and `center-v`  
 related: `center-h` `center-v` `center-a`
 
-##### display
+#### display
 * `transparent`  
 description: element is transparent (not hidden)  
 related: `translucent` `hidden`
@@ -133,7 +132,7 @@ related: `hidden` `hide-desktop`
 description: hide element when browser is larger than 1024px  
 related: `hidden` `hide-mobile`
 
-##### animation
+#### animation
 * `transition`  
 description: elements has 0.5 second transition for all properties  
 related: `slow` `fast`
@@ -146,7 +145,7 @@ related: `transition` `fast`
 description: elements has 0.3 second transition for all properties, works with `transition`  
 related: `transition` `slow`
 
-##### image
+#### image
 * `image`  
 description: container for image element
 
@@ -160,7 +159,7 @@ description: image become gray
 * `img-zoom`  
 description: image become a bit larger while hovering
 
-##### text
+#### text
 * `text-compact`  
 description: text has less line height  
 
@@ -187,7 +186,7 @@ related: `link-primary` `link-alt`
 * `hide-overflow`  
 description: hide overflow text with ellipsis for single line  
 
-##### button
+#### button
 * `btn-round`  
 description: button with round border  
 related: `btn` `btn-ghost`
@@ -196,7 +195,7 @@ related: `btn` `btn-ghost`
 description: button with tansparent background and colored border *(change to your color scheme)*  
 related: `btn` `btn-round`
 
-##### row
+#### row
 * `row-table`  
 description: item of the row will share same height, and centered vertically  
 related: `row` `row-compact`
@@ -205,13 +204,13 @@ related: `row` `row-compact`
 description: remove margin of the row, and remove padding of its children  
 related: `row` `row-table`
 
-##### modal
+#### modal
 * `modal-full`  
 description: a full page modal when browser width is less than 1024px, works with `modal`  
 related: `modal`
 
-#### tweak
-##### bootstrap
+### tweak
+#### bootstrap
 * remove list margin
 * remove label margin
 * white text while hover on link with brand color background
@@ -220,11 +219,11 @@ related: `modal`
 * showing "not-allowed" cursor for hoving disabled links
 * add transition to buttons
 
-##### font awesome
+#### font awesome
 * add right margin to icon
 * style checkbox
 
-##### browser
+#### browser
 * remove yellow background for input autofill;
 * remove list padding
 * remove focus ring
