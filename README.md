@@ -1,5 +1,5 @@
 # bootstrap-ao
-[bootstrap] [a]dd [o]n components for common use.
+(bootstrap) (a)dd (o)n components for common use.
 
 ### varibles and functions
 #### varibles
@@ -25,54 +25,60 @@ description: no backward mode (default value is "false")
 #### functions
 * `notice(type, status, action, stay)`  
 description: display notices on top of screen, hide in 3.5 seconds  
-dependency： `#shoulder` on page
-parameter:   type, string ("primary"/default, "success", "info", "warning", "danger")  
-             status, string (current status)  
-             action, string (suggested action)  
-             stay, boolean (hide in 3.5 second if not set)  
-return:      current notice index, worked with `notice_change()`
+dependency: `#shoulder` on page  
+return: current notice index, worked with `notice_change()`
+parameter:
+  * type, string (`primary`/default `success` `info` `warning` `danger`)  
+  * status, string (current status)  
+  * action, string (suggested action)  
+  * stay, boolean (hide in 3.5 second if not set)  
 
 * `notice_change(type, status, action, index)`  
 description: change notice content  
-dependency:  `#shoulder` on page, `notice()` return value  
-parameter:   type, string ("primary"/default, "success", "info", "warning", "danger")  
-             status, string (current status)  
-             action, string (suggested action)  
-             index, interger (`notice()` return value)  
-return:      none
+dependency: `#shoulder` on page, `notice()` return value  
+return: none  
+parameter:
+  * 
+  * type, string (`primary`/default `success` `info` `warning` `danger`)  
+  * status, string (current status)  
+  * action, string (suggested action)  
+  * index, interger (`notice()` return value)  
 
 * `imgLazy(type)`  
 description: load image when its fully loaded  
-dependency:  add `lazy` class to `img` elements, and set `src` for placeholder,  `data-src` for true image url  
-parameter:   type, interger (1/general, 2/`body`, 3/no placeholder)  
-return:      none
+dependency: add `lazy` class to `img` elements, and set `src` for placeholder,  `data-src` for true image url  
+return: none  
+parameter:
+  * type, interger (1/general, 2/`body`, 3/no placeholder)  
 
 * `toggleMask()`  
 description: show translucent mask above page (forbid other action)  
-dependency:  none  
-parameter:   none  
-return:      none  
+dependency: none  
+return: none  
+parameter: none  
 
 * `gotoTop()`
 description: scroll to page top  
-dependency:  none  
-parameter:   none  
-return:      none  
+dependency: none  
+return: none  
+parameter: none  
 
 * `urlChng(param, value, push)`  
 description: update url query string
-dependency:  [url()](https://github.com/websanova/js-url)  
-parameter:   param, string  
-             value, string (set '' to remove param)  
-             push, boolean (add browser history if set)  
-return:      none
+dependency: [url()](https://github.com/websanova/js-url)  
+return: none  
+parameter:
+  * param, string  
+  * value, string (set '' to remove param)  
+  * push, boolean (add browser history if set)  
 
 * `element.squeeze(speed)`  
 description: squeeze or expand element  
-dependency:  element with `squeeze` class  
-parameter:   element, jQuery object  
-             speed, string (`fast` or `slow`)  
-return:      none
+dependency: element with `squeeze` class  
+return: none  
+parameter:
+  * element, jQuery object  
+  * speed, string (`fast` or `slow`)  
 
 #### other
 * auto reload on orientation change (for mobile device)
