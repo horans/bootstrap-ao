@@ -8,11 +8,10 @@
 /** position **/
 .fixed { position:fixed; width:100%; top:0; margin:0 auto; padding:0 15px; z-index:5; }
 .fixed-bottom { position:fixed; width:100%; bottom:0; margin:0 auto; padding:0 15px; z-index:5; }
-.center-h, .center-v, .center-a { position:relative; overflow:hidden; }
+.center-h, .center-v { position:relative; overflow:hidden; }
 .center-e { display:block; position:relative; -webkit-font-smoothing: subpixel-antialiased; }
 .center-h > .center-e { left:50%; -webkit-transform:translateX(-50%); -moz-transform:translateX(-50%); -ms-transform:translateX(-50%); -o-transform:translateX(-50%); transform:translateX(-50%); }
 .center-v > .center-e { top:50%; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); -ms-transform:translateY(-50%); -o-transform:translateY(-50%); transform:translateY(-50%); }
-.center-a > .center-e { left:50%; top:50%; -webkit-transform:translate(-50%,-50%); -moz-transform:translate(-50%,-50%); -ms-transform:translate(-50%,-50%); -o-transform:translate(-50%,-50%); transform:translate(-50%,-50%); }
 
 /** display **/
 .transparent { opacity:0; }
