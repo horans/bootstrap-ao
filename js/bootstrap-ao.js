@@ -149,7 +149,7 @@ $(function() {
 				var da = $(this);
 				da
 					.data('toggle', 'tooltip')
-					.tooltip({ title: '功能未开启', trigger: 'click' })
+					.tooltip({ title: 'not ready', trigger: 'click' })
 					.click(function(e){
 						e.preventDefault();
 						e.stopPropagation();

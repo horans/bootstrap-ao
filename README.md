@@ -1,13 +1,88 @@
 # bootstrap-ao
 [bootstrap] [a]dd [o]n components for common use.
 
-### functions
+### varibles and functions
+#### varibles
+* `bWidth`  
+type: *varible (interger, get on load)*  
+description: current browser width  
+related: `isMobile` `bHeight`
 
-### style classes
+* `bHeight`  
+type: *varible (interger, get on load)*  
+description: current browser height  
+related: `isMobile` `bWidth`
+
+* `isMobile`  
+type: *varible (boolean, calculate on load)*  
+description: whether current browser width is less than 1024px  
+related: `bWidth` `bHeight`
+
+* `modeNoBk`  
+type: *varible (boolean, set by user)*  
+description: no backward mode (default value is "false") 
+
+#### functions
+* `notice(type, status, action, stay)`  
+description: display notices on top of screen, hide in 3.5 seconds  
+dependency： `#shoulder` on page
+parameter:   type, string ("primary"/default, "success", "info", "warning", "danger")  
+             status, string (current status)  
+             action, string (suggested action)  
+             stay, boolean (hide in 3.5 second if not set)  
+return:      current notice index, worked with `notice_change()`
+
+* `notice_change(type, status, action, index)`  
+description: change notice content  
+dependency:  `#shoulder` on page, `notice()` return value  
+parameter:   type, string ("primary"/default, "success", "info", "warning", "danger")  
+             status, string (current status)  
+             action, string (suggested action)  
+             index, interger (`notice()` return value)  
+return:      none
+
+* `imgLazy(type)`  
+description: load image when its fully loaded  
+dependency:  add `lazy` class to `img` elements, and set `src` for placeholder,  `data-src` for true image url  
+parameter:   type, interger (1/general, 2/`body`, 3/no placeholder)  
+return:      none
+
+* `toggleMask()`  
+description: show translucent mask above page (forbid other action)  
+dependency:  none  
+parameter:   none  
+return:      none  
+
+* `gotoTop()`
+description: scroll to page top  
+dependency:  none  
+parameter:   none  
+return:      none  
+
+* `urlChng(param, value, push)`  
+description: update url query string
+dependency:  [url()](https://github.com/websanova/js-url)  
+parameter:   param, string  
+             value, string (set '' to remove param)  
+             push, boolean (add browser history if set)  
+return:      none
+
+* `element.squeeze(speed)`  
+description: squeeze or expand element  
+dependency:  element with `squeeze` class  
+parameter:   element, jQuery object  
+             speed, string (`fast` or `slow`)  
+return:      none
+
+#### other
+* auto reload on orientation change (for mobile device)
+* add tooltip to links with `inactive` class, and stop page jumping
+
+### style classes and tweaks
 #### custom component
 ##### container
-*container-full*
-description: always occupies 100% width of its parent element, similar to `container-fluid`, but ignore container size.
+* `container-full`  
+description: always occupies 100% width of its parent element, similar to `container-fluid`, but ignore container size  
 related: `container` `container-fluid`
 
 ##### position
@@ -20,11 +95,11 @@ description: fixed postion, bottom of the brower
 related: `fixed`
 
 * `center-h`  
-description: direct children elements with `center-e` are horizontal centered  
+description: children elements with `center-e` are horizontal centered  
 related: `center-v` `center-e`
 
 * `center-v`  
-description: direct children elements with `center-e` are vertical centered  
+description: children elements with `center-e` are vertical centered  
 related: `center-h` `center-e`
 
 * `center-e`
@@ -33,11 +108,11 @@ related: `center-h` `center-v` `center-a`
 
 ##### display
 * `transparent`  
-description: transparent (not hidden)  
+description: element is transparent (not hidden)  
 related: `translucent` `hidden`
 
 * `translucent`  
-description: translucent  
+description: element is translucent  
 related: `transparent` `hidden`
 
 * `parameter`  
@@ -46,11 +121,11 @@ related: `hidden`
 
 * `hide-mobile`  
 description: hide element when browser is smaller than 1024px  
-related: `hide-desktop` `hidden`
+related: `hidden` `hide-desktop`
 
 * `hide-desktop`
 description: hide element when browser is larger than 1024px  
-related: `hide-mobile` `hidden`
+related: `hidden` `hide-mobile`
 
 ##### animation
 * `transition`  
@@ -64,14 +139,6 @@ related: `transition` `fast`
 * `fast`  
 description: elements has 0.3 second transition for all properties, works with `transition`  
 related: `transition` `slow`
-
-* `squeeze`  
-description: element can be vertical squeezed  
-related: `squeezed`
-
-* `squeezed`  
-description: element is vertical squeezed, works with `squeezed` and squeeze()  
-related: `squeeze`
 
 ##### image
 * `image`  
@@ -100,11 +167,11 @@ description: text become white
 related: `text-gray`
 
 * `link-primary`  
-description: link with primary color *change to your color scheme*  
+description: link with primary color *(change to your color scheme)*  
 related: `link-alt` `link-white`
 
 * `link-alt`  
-description: link with info color *change to your color scheme*  
+description: link with info color *(change to your color scheme)*  
 related: `link-primary` `link-white`
 
 * `link-white`  
@@ -120,7 +187,7 @@ description: button with round border
 related: `btn` `btn-ghost`
 
 * `btn-ghost`  
-description: button with tansparent background and colored border *change to your color scheme*  
+description: button with tansparent background and colored border *(change to your color scheme)*  
 related: `btn` `btn-round`
 
 ##### row
