@@ -230,7 +230,7 @@ function urlChng(param, value, push){
 		}
 		query[param] = value;
 	}
-	var url = ($.url('file') || './') + ($.isEmptyObject(query) ? '' : ('?' + $.param(query)));
+	var url = window.location.pathname + ($.isEmptyObject(query) ? '' : ('?' + $.param(query)));
 	if(push){
 		window.history.pushState(null, null, url);
 	} else {
