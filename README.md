@@ -189,11 +189,15 @@ description: hide overflow text with ellipsis for single line
 #### button
 * `btn-round`  
 description: button with round border  
-related: `btn` `btn-ghost`
+related: `btn` `btn-ghost` `btn-white`
 
 * `btn-ghost`  
 description: button with tansparent background and colored border *(change to your color scheme)*  
-related: `btn` `btn-round`
+related: `btn` `btn-round` `btn-white`
+
+* `btn-white`  
+description: button with tansparent background and white text/border color  
+related: `btn` `btn-round` `btn-ghost`
 
 #### row
 * `row-table`  

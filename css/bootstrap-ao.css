@@ -69,6 +69,7 @@ input[type=number] + label.error { top:34px; left:0; }
 .btn-info.btn-ghost.disabled:active, .btn-info.btn-ghost.disabled:hover { background-color:transparent !important; color:#5bc0de; border:solid 1px #5bc0de; }
 .btn-warning.btn-ghost.disabled:active, .btn-warning.btn-ghost.disabled:hover { background-color:transparent; color:#f0ad4e; border:solid 1px #f0ad4e; }
 .btn-danger.btn-ghost.disabled:active, .btn-danger.btn-ghost.disabled:hover { background-color:transparent; color:#d9534f; border:solid 1px #d9534f; }
+.btn-white.btn-ghost, .btn-white.btn-ghost:focus { background-color:transparent; color:#fff; border:solid 1px #fff; }
 .btn-primary.btn-ghost:hover { background-color:#337ab7; color:#fff; }
 .btn-success.btn-ghost:hover { background-color:#5cb85c; color:#fff; }
 .btn-info.btn-ghost:hover { background-color:#5bc0de; color:#fff; }
