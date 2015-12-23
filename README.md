@@ -101,11 +101,15 @@ related: `fixed`
 
 * `center-h`  
 description: children elements with `center-e` are horizontal centered  
-related: `center-v` `center-e`
+related: `center-v` `center-a` `center-e`
 
 * `center-v`  
 description: children elements with `center-e` are vertical centered  
-related: `center-h` `center-e`
+related: `center-h` `center-a` `center-e`
+
+* `center-a`  
+description: children elements with `center-e` are both horizontal and vertical centered  
+related: `center-h` `center-v` `center-e`
 
 * `center-e`
 description: horizontal or/and vertical centered to its parent element with `center-h` or/and `center-v`  
