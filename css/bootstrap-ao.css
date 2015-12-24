@@ -113,7 +113,6 @@ ul, ol { margin-bottom:0; }
 .caret { margin-left:5px; }
 .carousel-indicators li, .carousel-indicators li.active { margin:10px; width:12px; height:12px; border:none; opacity:0.6; background-color:#fff; }
 .carousel-indicators li.active { opacity:1; }
-.img-responsive { width:100%; }
 body.modal-open { overflow:visible; }
 .modal-backdrop { z-index:14; }
 .modal { z-index:15; text-align:center; }
