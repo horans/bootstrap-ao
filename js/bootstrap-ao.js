@@ -5,12 +5,12 @@ var bWidth = document.documentElement.clientWidth;
 var bHeight = document.documentElement.clientHeight;
 var bAgent	= navigator.userAgent;
 var isMobile = false;
-if(bWidth < 1024) {
+if(bWidth < 1024) {		//break point
 	isMobile = true;
 }
 
 //no backward
-var modeNoBk = true;
+var modeNoBk = false;
 if(modeNoBk){
 	history.pushState(null, null, location.href);
 	window.onpopstate = function() {
@@ -110,35 +110,40 @@ $(function() {
 });
 
 //image lazy load
-function imgLazy(type){
+jQuery.fn.lazy = function(type){
 	'use strict';
-	if(type === 2){
-		if($('body').hasClass('lazy')){
-			$('<img/>').attr('src', $('body').data('src')).load(function() {
-				$(this).remove();
-				$('body').removeClass('lazy').css('background-image', 'url(' + $('body').data('src') + ')');
-			});
-		}
-	} else {
-		$('img.lazy').each(function(){
-			$(this).addClass('transition');
-			if($(this).data('type') !== 3){					//no placeholder
-				$(this).before('<div class="img-placeholder"><i class="fa fa-spinner fa-pulse text-primary"></i></div>');
+	$(this).each(function(){
+		var image = $(this);
+		if(image.hasClass('lazy')){
+			image.addClass('transition');
+			if(type === 3){		//with placeholder icon
+				if(image.prop('tagName') !== 'body') {
+					image.before('<div class="img-placeholder"><i class="fa fa-spinner fa-pulse text-primary"></i></div>');
+				}
 			}
-		});
-		setTimeout(function(){
-			$('img.lazy').each(function(){
-				var image = $(this);
-				var iUrl = $(this).data('src');
+			setTimeout(function(){
+				var iUrl = image.data('src');
+				if(isMobile && image.data('mobile')){
+					iUrl = image.data('mobile');
+				}
 				$('<img/>').attr('src', iUrl).load(function() {
 					$(this).remove();
-					image.parent().find('.img-placeholder').remove();
-					image.removeClass('lazy').attr('src', iUrl);
+					if(type === 2){
+						image.css('background-image', 'url(' + iUrl + ')');
+					} else {
+						if(type === 3){
+							if(image.prop('tagName') !== 'body') {
+								image.parent().find('.img-placeholder').remove();
+							}
+						}
+						image.attr('src', iUrl);
+					}
+					image.removeClass('lazy');
 				});
-			});
-		}, 200);
-	}
-}
+			}, 200);
+		}
+	});
+};
 
 //disabled link
 $(function() {

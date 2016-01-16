@@ -45,10 +45,10 @@ parameter:
 
 * `imgLazy(type)`  
 description: load image when its fully loaded  
-dependency: add `lazy` class to `img` elements, and set `src` for placeholder,  `data-src` for true image url  
+dependency: add `lazy` class to `img` elements, and set `src` for placeholder image,  `data-src` for true image url, and an advanced `data-mobile` can be set for image for mobile device. (animated placeholder icon need [Font Awesome](https://github.com/FortAwesome/Font-Awesome))  
 return: none  
 parameter:
-  * type, interger (1/general, 2/`body`, 3/no placeholder)  
+  * type, interger (1/general, 2/background, 3/with placeholder icon)  
 
 * `toggleMask()`  
 description: show translucent mask above page (forbid other action)  
@@ -174,6 +174,14 @@ related: `text-white`
 * `text-white`  
 description: text become white  
 related: `text-gray`
+
+* `text-light`  
+description: text become light  
+related: `text-bold`
+
+* `text-bold`  
+description: text become bold  
+related: `text-thin`
 
 * `link-primary`  
 description: link with primary color *(change to your color scheme)*  

@@ -51,6 +51,8 @@ img.img-zoom:hover { -webkit-transform:scale(1.1,1.1); -moz-transform:scale(1.1,
 .link-primary, .link-primary a, .link-primary a:hover { color:#337ab7 !important; }			/* @brand-primary */
 .link-alt, .link-alt:hover { color:#5bc0de; text-decoration:underline; }					/* @brand-info */
 .link-white, .link-white a, .link-white a:hover { color:#fff !important; }
+.text-light { font-weight:300; }
+.text-bold { font-weight:600; }
 .hide-overflow { white-space:nowrap; text-overflow:ellipsis; overflow:hidden; display: block; }
 a.disabled { cursor:not-allowed; }
 label.error { color:#e00000; position:absolute; display:block; }
@@ -140,6 +142,7 @@ li { padding:0; }
 .focus, :focus { outline:none !important; }
 ::-webkit-scrollbar { display: none; }
 html { overflow:hidden; overflow-y:scroll; }
+body { -ms-overflow-style:none; }
 textarea { resize:none; }
 
 /** other **/
