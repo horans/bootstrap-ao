@@ -112,7 +112,7 @@ $(function() {
 //image lazy load
 jQuery.fn.lazy = function(type){
 	'use strict';
-	$(this).each(function(){
+	$(this).each(function(index){
 		var image = $(this);
 		if(image.hasClass('lazy')){
 			image.addClass('transition');
@@ -140,7 +140,7 @@ jQuery.fn.lazy = function(type){
 					}
 					image.removeClass('lazy');
 				});
-			}, 200);
+			}, 100 * index);
 		}
 	});
 };

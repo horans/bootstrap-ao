@@ -6,8 +6,8 @@
 .container-full { margin:0 auto; position:relative; }
 
 /** position **/
-.fixed { position:fixed; width:100%; top:0; margin:0 auto; z-index:5; }
-.fixed-bottom { position:fixed; width:100%; bottom:0; margin:0 auto; z-index:5; }
+.fixed { position:fixed; width:100%; margin:0 auto; z-index:99; top:0; }
+.fixed.bottom { top:auto; bottom:0; }
 .center-h, .center-v, .center-a { position:relative; overflow:hidden; }
 .center-e { display:block; position:relative; -webkit-font-smoothing: subpixel-antialiased; }
 .center-h > .center-e { left:50%; -webkit-transform:translateX(-50%); -moz-transform:translateX(-50%); -ms-transform:translateX(-50%); -o-transform:translateX(-50%); transform:translateX(-50%); }
@@ -106,6 +106,25 @@ body.mask-on { overflow: hidden; }
 #shoulder .alert strong { margin:10px; }
 @media (max-width:1023px){
 #shoulder { top:50px; }
+}
+
+/* carousel fade */
+/* http://stackoverflow.com/questions/18548731/ */
+.carousel-fade .carousel-inner .item { opacity:0; -webkit-transition-property:opacity; -moz-transition-property:opacity; -ms-transition-property:opacity; -o-transition-property:opacity; transition-property:opacity; }
+.carousel-fade .carousel-inner .active { opacity:1; }
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right { left:0; opacity:0; z-index:1; }
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right { opacity:1; }
+.carousel-fade .carousel-control { z-index:2; }
+@media all and (transform-3d), (-webkit-transform-3d), (-moz-transform-3d), (-ms-transform-3d), (-o-transform-3d) {
+.carousel-fade .carousel-inner > .item.next,
+.carousel-fade .carousel-inner > .item.active.right { opacity:0; -webkit-transform:translate3d(0, 0, 0); -moz-transform:translate3d(0, 0, 0); -ms-transform:translate3d(0, 0, 0); -o-transform:translate3d(0, 0, 0); transform:translate3d(0, 0, 0); }
+.carousel-fade .carousel-inner > .item.prev,
+.carousel-fade .carousel-inner > .item.active.left { opacity:0; -webkit-transform:translate3d(0, 0, 0); -moz-transform:translate3d(0, 0, 0); -ms-transform:translate3d(0, 0, 0); -o-transform:translate3d(0, 0, 0); transform:translate3d(0, 0, 0); }
+.carousel-fade .carousel-inner > .item.next.left,
+.carousel-fade .carousel-inner > .item.prev.right,
+.carousel-fade .carousel-inner > .item.active { opacity:1; -webkit-transform:translate3d(0, 0, 0); -moz-transform:translate3d(0, 0, 0); -ms-transform:translate3d(0, 0, 0); -o-transform:translate3d(0, 0, 0); transform:translate3d(0, 0, 0); }
 }
 
 /********** tweak **********/

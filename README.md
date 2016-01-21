@@ -15,7 +15,7 @@ related: `isMobile` `bWidth`
 
 * `isMobile`  
 type: *varible (boolean, calculate on load)*  
-description: whether current browser width is less than 1024px  
+description: whether current browser width is less than 1024px *(change to your break point)*  
 related: `bWidth` `bHeight`
 
 * `modeNoBk`  
@@ -93,10 +93,10 @@ related: `container` `container-fluid`
 #### position
 * `fixed`  
 description: fixed position, top of the browser   
-related: `fixed-bottom`
+related: `bottom`
 
-* `fixed-bottom`  
-description: fixed postion, bottom of the brower  
+* `bottom`  
+description: fixed position, bottom of the brower, works with `fixed`  
 related: `fixed`
 
 * `center-h`  
@@ -129,11 +129,11 @@ description: hidden parameter
 related: `hidden`
 
 * `hide-mobile`  
-description: hide element when browser is smaller than 1024px  
+description: hide element when browser's width is smaller than 1024px *(change to your break point)*  
 related: `hidden` `hide-desktop`
 
 * `hide-desktop`
-description: hide element when browser is larger than 1024px  
+description: hide element when browser's width is larger than 1024px *(change to your break point)*  
 related: `hidden` `hide-mobile`
 
 #### animation
@@ -222,8 +222,14 @@ related: `row` `row-table`
 
 #### modal
 * `modal-full`  
-description: a full page modal when browser width is less than 1024px, works with `modal`  
+description: a full page modal when browser width is less than 1024px *(change to your break point)*, works with `modal`  
 related: `modal`
+
+#### carousel
+* `carousel-fade`  
+description: carousel slide fadeout when switch to another, works with `carousel`. ([source](http://stackoverflow.com/questions/18548731/))  
+related: `carousel`
+
 
 ### tweak
 #### bootstrap
