@@ -110,20 +110,27 @@ $(function() {
 });
 
 //image lazy load
-jQuery.fn.lazy = function(type){
+jQuery.fn.lazy = function(icon){
 	'use strict';
 	$(this).each(function(index){
 		var image = $(this);
-		if(image.hasClass('lazy')){
-			image.addClass('transition');
-			if(type === 3){		//with placeholder icon
-				if(image.prop('tagName') !== 'body') {
+		var type = 1;	//image
+		if(image.prop('tagName') !== 'IMG'){
+			type = 2;	//background
+		}
+		var iUrl = image.data('src');
+		if(image.hasClass('lazy') &&iUrl && iUrl !== ''){
+			if(!image.hasClass('transition')){
+				image.addClass('transition');
+			}
+			if(icon){	//with placeholder icon
+				if(image.prop('tagName') !== 'BODY') {
 					image.before('<div class="img-placeholder"><i class="fa fa-spinner fa-pulse text-primary"></i></div>');
 				}
 			}
 			setTimeout(function(){
-				var iUrl = image.data('src');
-				if(isMobile && image.data('mobile')){
+				var iMob = image.data('mobile');
+				if(isMobile && iMob && iMob !== ''){
 					iUrl = image.data('mobile');
 				}
 				$('<img/>').attr('src', iUrl).load(function() {
@@ -131,7 +138,7 @@ jQuery.fn.lazy = function(type){
 					if(type === 2){
 						image.css('background-image', 'url(' + iUrl + ')');
 					} else {
-						if(type === 3){
+						if(icon){
 							if(image.prop('tagName') !== 'body') {
 								image.parent().find('.img-placeholder').remove();
 							}

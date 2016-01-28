@@ -43,12 +43,13 @@ parameter:
   * action, string (suggested action)  
   * index, interger (`notice()` return value)  
 
-* `imgLazy(type)`  
+* `element.lazy(icon)`  
 description: load image when its fully loaded  
-dependency: add `lazy` class to `img` elements, and set `src` for placeholder image,  `data-src` for true image url, and an advanced `data-mobile` can be set for image for mobile device. (animated placeholder icon need [Font Awesome](https://github.com/FortAwesome/Font-Awesome))  
+dependency: add `lazy` class to `img` element, and set `src` for placeholder image, `data-src` for true image url, and an advanced `data-mobile` can be set for image for mobile device. (a: image will apply to `background-image` for a "non-img" element; b: animated placeholder icon needs [Font Awesome](https://github.com/FortAwesome/Font-Awesome))  
 return: none  
 parameter:
-  * type, interger (1/general, 2/background, 3/with placeholder icon)  
+  * element, jQuery object  
+  * icon, boolean (true/with placeholder icon)  
 
 * `toggleMask()`  
 description: show translucent mask above page (forbid other action)  
