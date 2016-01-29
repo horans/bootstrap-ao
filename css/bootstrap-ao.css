@@ -3,7 +3,13 @@
 
 /********** custom component **********/
 /** container **/
-.container-full { margin:0 auto; position:relative; }
+.container-full { margin:0 auto; position:relative; width:100%; }
+.container-full.small { max-width:768px; }
+.container-full.medium { max-width:1024px; }
+.container-full.large { max-width:1200px; }
+.container.small { max-width:768px; }
+.container.medium { max-width:1024px; }
+.container.large { max-width:1200px; }
 
 /** position **/
 .fixed { position:fixed; width:100%; margin:0 auto; z-index:99; top:0; }

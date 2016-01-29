@@ -88,8 +88,20 @@ parameter:
 ### custom component
 #### container
 * `container-full`  
-description: always occupies 100% width of its parent element, similar to `container-fluid`, but ignore container size  
+description: always occupies 100% width of its parent element, similar to `container-fluid`, but ignore container size and grid gutter width  
 related: `container` `container-fluid`
+
+* `small`  
+description: a centered container with max width of 768px, work with `container`(with gutter) or `container-full`(no gutter)  
+related: `container` `container-full`
+
+* `medium`  
+description: a centered container with max width of 1024px, work with `container`(with gutter) or `container-full`(no gutter)  
+related: `container` `container-full`
+
+* `large`  
+description: a centered container with max width of 1200px, work with `container`(with gutter) or `container-full`(no gutter)  
+related: `container` `container-full`
 
 #### position
 * `fixed`  
