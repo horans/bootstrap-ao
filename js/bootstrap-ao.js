@@ -5,7 +5,7 @@ var bWidth = document.documentElement.clientWidth;
 var bHeight = document.documentElement.clientHeight;
 var bAgent	= navigator.userAgent;
 var isMobile = false;
-if(bWidth < 1024) {		//break point
+if(bWidth < 1200) {		//break point
 	isMobile = true;
 }
 

@@ -15,7 +15,7 @@ related: `isMobile` `bWidth`
 
 * `isMobile`  
 type: *varible (boolean, calculate on load)*  
-description: whether current browser width is less than 1024px *(change to your break point)*  
+description: whether current browser width is less than 1200px *(change to your break point)*  
 related: `bWidth` `bHeight`
 
 * `modeNoBk`  
@@ -96,7 +96,7 @@ description: a centered container with max width of 768px, work with `container`
 related: `container` `container-full`
 
 * `medium`  
-description: a centered container with max width of 1024px, work with `container`(with gutter) or `container-full`(no gutter)  
+description: a centered container with max width of 1200px, work with `container`(with gutter) or `container-full`(no gutter)  
 related: `container` `container-full`
 
 * `large`  
@@ -142,11 +142,11 @@ description: hidden parameter
 related: `hidden`
 
 * `hide-mobile`  
-description: hide element when browser's width is smaller than 1024px *(change to your break point)*  
+description: hide element when browser's width is smaller than 1200px *(change to your break point)*  
 related: `hidden` `hide-desktop`
 
 * `hide-desktop`
-description: hide element when browser's width is larger than 1024px *(change to your break point)*  
+description: hide element when browser's width is larger than 1200px *(change to your break point)*  
 related: `hidden` `hide-mobile`
 
 #### animation
@@ -235,7 +235,7 @@ related: `row` `row-table`
 
 #### modal
 * `modal-full`  
-description: a full page modal when browser width is less than 1024px *(change to your break point)*, works with `modal`  
+description: a full page modal when browser width is less than 1200px *(change to your break point)*, works with `modal`  
 related: `modal`
 
 #### carousel
