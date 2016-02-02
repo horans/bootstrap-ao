@@ -92,15 +92,19 @@ description: always occupies 100% width of its parent element, similar to `conta
 related: `container` `container-fluid`
 
 * `small`  
-description: a centered container with max width of 768px, work with `container`(with gutter) or `container-full`(no gutter)  
+description: a centered container with max width of 800px, work with `container`(with gutter) or `container-full`(no gutter)  
 related: `container` `container-full`
 
 * `medium`  
-description: a centered container with max width of 1200px, work with `container`(with gutter) or `container-full`(no gutter)  
+description: a centered container with max width of 1000px, work with `container`(with gutter) or `container-full`(no gutter)  
 related: `container` `container-full`
 
 * `large`  
 description: a centered container with max width of 1200px, work with `container`(with gutter) or `container-full`(no gutter)  
+related: `container` `container-full`
+
+* `x-large`  
+description: a centered container with max width of 1400px, work with `container`(with gutter) or `container-full`(no gutter)  
 related: `container` `container-full`
 
 #### position
@@ -176,6 +180,9 @@ description: image become gray
 * `img-zoom`  
 description: image become a bit larger while hovering
 
+* `bg-cover`  
+description: background image is "center" and "cover", with "no-repeat"
+
 #### text
 * `text-compact`  
 description: text has less line height  
@@ -226,7 +233,7 @@ related: `btn` `btn-round` `btn-ghost`
 
 #### row
 * `row-table`  
-description: item of the row will share same height, and centered vertically  
+description: item of the row will share same height, and centered vertically *(will made row become non-floating)*  
 related: `row` `row-compact`
 
 * `row-compact`  
