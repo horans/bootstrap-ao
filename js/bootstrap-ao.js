@@ -119,7 +119,7 @@ jQuery.fn.lazy = function(icon){
 			type = 2;	//background
 		}
 		var iUrl = image.data('src');
-		if(image.hasClass('lazy') &&iUrl && iUrl !== ''){
+		if(image.hasClass('lazy') && iUrl && iUrl !== ''){
 			if(!image.hasClass('transition')){
 				image.addClass('transition');
 			}
@@ -131,19 +131,19 @@ jQuery.fn.lazy = function(icon){
 			setTimeout(function(){
 				var iMob = image.data('mobile');
 				if(isMobile && iMob && iMob !== ''){
-					iUrl = image.data('mobile');
+					iUrl = iMob;
 				}
 				$('<img/>').attr('src', iUrl).load(function() {
 					$(this).remove();
 					if(type === 2){
 						image.css('background-image', 'url(' + iUrl + ')');
 					} else {
-						if(icon){
-							if(image.prop('tagName') !== 'body') {
-								image.parent().find('.img-placeholder').remove();
-							}
-						}
 						image.attr('src', iUrl);
+					}
+					if(icon){
+						if(image.prop('tagName') !== 'BODY') {
+							image.parent().find('.img-placeholder').remove();
+						}
 					}
 					image.removeClass('lazy');
 				});
