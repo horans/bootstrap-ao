@@ -3,6 +3,7 @@
 
 /********** custom component **********/
 /** container **/
+.container { position: relative; }
 .container.small { max-width:800px; font-size:100%; }
 .container.medium { max-width:1000px; }
 .container.large { max-width:1200px; }
@@ -110,7 +111,7 @@ body.mask-on { overflow: hidden; }
 .page-mask { opacity:.5; filter:alpha(opacity=50); z-index:14; position:fixed; top:0; right:0; bottom:0; left:0; background-color:#000; }
 
 /** shoulder **/
-#shoulder { top:90px; z-index:20; }
+#shoulder { top:90px; z-index:20; padding:0 15px; }
 #shoulder .alert { display:none; cursor:pointer; font-size:18px; border:1px solid #999; border:1px solid rgba(0,0,0,0.2); box-shadow:0 3px 9px rgba(0,0,0,.5); }
 #shoulder .alert strong { margin:10px; }
 @media (max-width:1199px){
