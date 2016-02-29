@@ -10,8 +10,10 @@ if(bWidth < 1200) {		//break point
 }
 
 //no backward
-var modeNoBk = false;
-if(modeNoBk){
+var sMode = {
+    noback : false
+};
+if(sMode.noback){
 	history.pushState(null, null, location.href);
 	window.onpopstate = function() {
 		'use strict';

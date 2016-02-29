@@ -166,6 +166,10 @@ related: `transition` `fast`
 description: elements has 0.3 second transition for all properties, works with `transition`  
 related: `transition` `slow`
 
+* `delay`  
+description: elements has 0.5 second transition delay, works with `transition` and `fast`(0.3s) / `slow`(0.7s)  
+related: `transition` `fast` `slow`
+
 #### image
 * `image`  
 description: container for image element
@@ -217,6 +221,9 @@ related: `link-primary` `link-alt`
 
 * `hide-overflow`  
 description: hide overflow text with ellipsis for single line  
+
+* `bg-shadow`  
+description: adding gradiant shadow background to text (ideal for white text on image)  
 
 #### button
 * `btn-round`  
