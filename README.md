@@ -6,19 +6,29 @@
 * `bWidth`  
 type: *varible (interger, get on load)*  
 description: current browser width  
-related: `isMobile` `bHeight`
+related: `bHeight` `isMobile` `isTablet` `isDesktop`
 
 * `bHeight`  
 type: *varible (interger, get on load)*  
 description: current browser height  
-related: `isMobile` `bWidth`
+related: `bWidth` `isMobile` `isTablet` `isDesktop`
 
 * `isMobile`  
 type: *varible (boolean, calculate on load)*  
-description: whether current browser width is less than 1200px *(change to your break point)*  
-related: `bWidth` `bHeight`
+description: whether current browser width is less than 800px *(change to your break point)*  
+related: `bWidth` `bHeight` `isTablet` `isDesktop`
 
-* `modeNoBk`  
+* `isTablet`  
+type: *varible (boolean, calculate on load)*  
+description: whether current browser width is less than 1200px *(change to your break point)*  
+related: `bWidth` `bHeight` `isTablet` `isDesktop`
+
+* `isDesktop`  
+type: *varible (boolean, calculate on load)*  
+description: whether current browser width is equal to/larger than 1200px *(change to your break point)*  
+related: `bWidth` `bHeight` `isMobile` `isTablet`
+
+* `sMode.noback`  
 type: *varible (boolean, set by user)*  
 description: no backward mode (default value is "false") 
 
@@ -45,7 +55,7 @@ parameter:
 
 * `element.lazy(icon)`  
 description: load image when its fully loaded  
-dependency: add `lazy` class to `img` element, and set `src` for placeholder image, `data-src` for true image url, and an advanced `data-mobile` can be set for image for mobile device. (a: image will apply to `background-image` for a "non-img" element; b: animated placeholder icon needs [Font Awesome](https://github.com/FortAwesome/Font-Awesome))  
+dependency: add `lazy` class to `img` element, and set `src` for placeholder image, `data-src` for true image url, and advanced `data-mobile`/`data-tablet` can be set for image for mobile/tablet device. (a: image will apply to `background-image` for a "non-img" element; b: animated placeholder icon needs [Font Awesome](https://github.com/FortAwesome/Font-Awesome))  
 return: none  
 parameter:
   * element, jQuery object  

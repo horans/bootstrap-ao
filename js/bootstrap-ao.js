@@ -5,8 +5,15 @@ var bWidth = document.documentElement.clientWidth;
 var bHeight = document.documentElement.clientHeight;
 var bAgent	= navigator.userAgent;
 var isMobile = false;
-if(bWidth < 1200) {		//break point
-	isMobile = true;
+var isTablet = false;
+var isDesktop = true;
+if(bWidth < 1144){			//tablet break point
+	isDesktop = false;
+	if(bWidth < 858){		//mobile break point
+		isMobile = true;
+	} else {
+		isTablet = true;
+	}
 }
 
 //no backward
@@ -134,6 +141,10 @@ jQuery.fn.lazy = function(icon){
 				var iMob = image.data('mobile');
 				if(isMobile && iMob && iMob !== ''){
 					iUrl = iMob;
+				}
+				var iTab = image.data('tablet');
+				if(isTablet && iTab && iTab !== ''){
+					iUrl = iTab;
 				}
 				$('<img/>').attr('src', iUrl).load(function() {
 					$(this).remove();

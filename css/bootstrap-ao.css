@@ -27,8 +27,11 @@
 .transparent { opacity:0; }
 .translucent { opacity:0.5; }
 .parameter { display:none; }
-@media (max-width:1199px){
+@media (max-width:799px){
 .hide-mobile { display:none !important; margin:0 !important; }
+}
+@media (max-width:1199px){
+.hide-tablet { display:none !important; margin:0 !important; }
 }
 @media (min-width:1200px){
 .hide-desktop { display:none !important; margin:0 !important; }
