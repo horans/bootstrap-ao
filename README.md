@@ -166,19 +166,23 @@ related: `hidden` `hide-mobile`
 #### animation
 * `transition`  
 description: elements has 0.5 second transition for all properties  
-related: `slow` `fast`
+related: `slow` `fast` `delay` `ease`
 
 * `slow`  
 description: elements has 0.7 second transition for all properties, works with `transition`  
-related: `transition` `fast`
+related: `transition` `fast` `delay` `ease`
 
 * `fast`  
 description: elements has 0.3 second transition for all properties, works with `transition`  
-related: `transition` `slow`
+related: `transition` `slow` `delay` `ease`
 
 * `delay`  
 description: elements has 0.5 second transition delay, works with `transition` and `fast`(0.3s) / `slow`(0.7s)  
-related: `transition` `fast` `slow`
+related: `transition` `fast` `slow` `ease`
+
+* `ease`  
+description: transition with "ease" rather than "linear", works with `transition`  
+related: `transition` `fast` `slow` `delay`
 
 #### image
 * `image`  

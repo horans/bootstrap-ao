@@ -38,13 +38,14 @@
 }
 
 /** animation **/
-.transition { -webkit-transition:all 0.5s ease-in-out; -moz-transition:all 0.5s ease-in-out; -ms-transition:all 0.5s ease-in-out; -o-transition:all 0.5s ease-in-out; transition:all 0.5s ease-in-out; }
+.transition { -webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear; -ms-transition:all 0.5s linear; -o-transition:all 0.5s linear; transition:all 0.5s linear; }
 .transition.slow { -webkit-transition-duration:0.7s; -moz-transition-duration:0.7s; -o-transition-duration:0.7s; transition-duration:0.7s; }
 .transition.fast { -webkit-transition-duration:0.3s; -moz-transition-duration:0.3s; -o-transition-duration:0.3s; transition-duration:0.3s; }
 .transition.delay { -webkit-transition-delay: 0.5s; -moz-transition-delay: 0.5s; -o-transition-delay: 0.5s; transition-delay: 0.5s; }
 .transition.delay.fast { -webkit-transition-delay: 0.3s; -moz-transition-delay: 0.3s; -o-transition-delay: 0.3s; transition-delay: 0.3s; }
 .transition.delay.slow { -webkit-transition-delay: 0.7s; -moz-transition-delay: 0.7s; -o-transition-delay: 0.7s; transition-delay: 0.7s; }
-a { -webkit-transition:all 0.5s ease-in-out; -moz-transition:all 0.5s ease-in-out; -ms-transition:all 0.5s ease-in-out; -o-transition:all 0.5s ease-in-out; transition:all 0.5s ease-in-out; }
+.transition.ease { -webkit-transition-timing-function: ease; -moz-transition-timing-function: ease; -o-transition-timing-function: ease; transition-timing-function: ease; }
+a { -webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear; -ms-transition:all 0.5s linear; -o-transition:all 0.5s linear; transition:all 0.5s linear; }
 .squeeze { overflow:hidden; }
 .squeeze.squeezed { max-height:0 !important; }
 
@@ -56,7 +57,7 @@ img.lazy { opacity:0; }
 .img-gray { -webkit-filter:grayscale(1); -webkit-filter:grayscale(100%); filter:grayscale(100%); filter:gray; filter:url(#greyscale); }
 .bg-cover { background-size:cover; background-position:center center; background-repeat:no-repeat; }
 @media (min-width:1200px){
-img.img-zoom { -webkit-transition:all 1.5s ease-in-out; -moz-transition:all 1.5s ease-in-out; -ms-transition:all 1.5s ease-in-out; -o-transition:all 1.5s ease-in-out; transition:all 1.5s ease-in-out; }
+img.img-zoom { -webkit-transition:all 1.5s ease-out; -moz-transition:all 1.5s ease-out; -ms-transition:all 1.5s ease-out; -o-transition:all 1.5s ease-out; transition:all 1.5s ease-out; }
 img.img-zoom:hover { -webkit-transform:scale(1.1,1.1); -moz-transform:scale(1.1,1.1); -ms-transform:scale(1.1,1.1); -o-transform:scale(1.1,1.1); transform:scale(1.1,1.1); }
 }
 
@@ -77,7 +78,7 @@ input[type=number] + label.error { top:34px; left:0; }
 .bg-shadow { background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0.4)0%, rgba(0, 0, 0, 0)100%); background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0.4)0%, rgba(0, 0, 0, 0)100%); background: -o-linear-gradient(0deg, rgba(0, 0, 0, 0.4)0%, rgba(0, 0, 0, 0)100%); background: linear-gradient(0deg, rgba(0, 0, 0, 0.4)0%, rgba(0, 0, 0, 0)100%); }
 
 /** button **/
-.btn { transition:all 0.5s ease-in-out; }
+.btn { transition:all 0.5s linear; }
 .btn-round { border-radius:200px; }
 .btn-primary.btn-ghost, .btn-primary.btn-ghost:focus { background-color:transparent; color:#337ab7; border:solid 1px #337ab7; }		/* @brand-primary */
 .btn-success.btn-ghost, .btn-success.btn-ghost:focus { background-color:transparent; color:#5cb85c; border:solid 1px #5cb85c; }		/* @brand-success */
@@ -115,10 +116,10 @@ input[type=number] + label.error { top:34px; left:0; }
 
 /** mask **/
 body.mask-on { overflow: hidden; }
-.page-mask { opacity:.5; filter:alpha(opacity=50); z-index:14; position:fixed; top:0; right:0; bottom:0; left:0; background-color:#000; }
+.page-mask { opacity:.5; filter:alpha(opacity=50); z-index:101; position:fixed; top:0; right:0; bottom:0; left:0; background-color:#000; }
 
 /** shoulder **/
-#shoulder { top:90px; z-index:101; padding:0 15px; }
+#shoulder { top:90px; z-index:102; padding:0 15px; }
 #shoulder .alert { display:none; cursor:pointer; font-size:18px; border:1px solid #999; border:1px solid rgba(0,0,0,0.2); box-shadow:0 3px 9px rgba(0,0,0,.5); }
 #shoulder .alert strong { margin:10px; }
 @media (max-width:1199px){
