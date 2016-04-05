@@ -271,6 +271,11 @@ related: `modal`
 description: carousel slide fadeout when switch to another, works with `carousel`. ([source](http://stackoverflow.com/questions/18548731/))  
 related: `carousel`
 
+#### input
+* `fa-input`  
+description: use [Font Awesome](https://github.com/FortAwesome/Font-Awesome)) to style checkbox/radio input. (example code: `<label class="fa-input"><input type="checkbox"><span>check me</span></label>`)  
+related: `form-control`
+
 
 ### tweak
 #### bootstrap
