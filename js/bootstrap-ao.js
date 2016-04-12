@@ -3,13 +3,13 @@
 //get browser info
 var bWidth = document.documentElement.clientWidth;
 var bHeight = document.documentElement.clientHeight;
-var bAgent	= navigator.userAgent;
+var bAgent	= window.navigator.userAgent;
 var isMobile = false;
 var isTablet = false;
 var isDesktop = true;
-if(bWidth < 1144){			//tablet break point
+if(bWidth < 1200){			//tablet break point
 	isDesktop = false;
-	if(bWidth < 858){		//mobile break point
+	if(bWidth < 800){		//mobile break point
 		isMobile = true;
 	} else {
 		isTablet = true;
@@ -21,7 +21,7 @@ var sMode = {
     noback : false
 };
 if(sMode.noback){
-	history.pushState(null, null, location.href);
+	window.history.pushState(null, null, location.href);
 	window.onpopstate = function() {
 		'use strict';
 		history.go(1);
@@ -50,7 +50,7 @@ function notice(type, status, action, stay){
 			case 'info':
 				nIcon = 'info-circle';
 				break;
-			case 'warning':	
+			case 'warning':
 				nIcon = 'exclamation-triangle';
 				break;
 			case 'danger':
@@ -84,7 +84,7 @@ function notice_change(type, status, action, index){
 			case 'info':
 				nIcon = 'info-circle';
 				break;
-			case 'warning':	
+			case 'warning':
 				nIcon = 'exclamation-triangle';
 				break;
 			case 'danger':
@@ -251,7 +251,7 @@ function urlChng(param, value, push){
 		}
 	} else {
 		if(query === undefined){
-			query = new Object();
+			query = {};
 		}
 		query[param] = value;
 	}
@@ -262,3 +262,18 @@ function urlChng(param, value, push){
 		window.history.replaceState(null, null, url);
 	}
 }
+
+//scroll to hash
+$(function(){
+	'use strict';
+	$('a').on('click', function(e){
+		if($(this).attr('href').indexOf('#') === 0){
+			e.preventDefault();
+			e.stopPropagation();
+			var hash = $(this).attr('href');
+			if(hash !== '#'){
+				$('html, body').animate({ scrollTop: $(hash).offset().top }, 1500);
+			}
+		}
+	});
+});

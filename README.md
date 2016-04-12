@@ -93,6 +93,7 @@ parameter:
 ### other
 * auto reload on orientation change (for mobile device)
 * add tooltip to links with `inactive` class, and stop page jumping
+* scroll to in page anchor, and prevent hash change
 
 ## css: style classes and tweaks
 ### custom component
@@ -273,7 +274,7 @@ related: `carousel`
 
 #### input
 * `fa-input`  
-description: use [Font Awesome](https://github.com/FortAwesome/Font-Awesome)) to style checkbox/radio input. (example code: `<label class="fa-input"><input type="checkbox"><span>check me</span></label>`)  
+description: use [Font Awesome](https://github.com/FortAwesome/Font-Awesome) to style checkbox/radio input. (example code: `<label class="fa-input"><input type="checkbox"><span>check me</span></label>`)  
 related: `form-control`
 
 
@@ -289,7 +290,6 @@ related: `form-control`
 
 #### font awesome
 * add right margin to icon
-* style checkbox
 
 #### browser
 * remove yellow background for input autofill;
