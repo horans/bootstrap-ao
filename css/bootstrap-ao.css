@@ -75,8 +75,9 @@ a.disabled { cursor:not-allowed; }
 .bg-shadow { background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0.4)0%, rgba(0, 0, 0, 0)100%); background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0.4)0%, rgba(0, 0, 0, 0)100%); background: -o-linear-gradient(0deg, rgba(0, 0, 0, 0.4)0%, rgba(0, 0, 0, 0)100%); background: linear-gradient(0deg, rgba(0, 0, 0, 0.4)0%, rgba(0, 0, 0, 0)100%); }
 
 /** button **/
-.btn { transition:all 0.5s linear; }
+.btn { -webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear; -ms-transition:all 0.5s linear; -o-transition:all 0.5s linear; transition:all 0.5s linear; }
 .btn-round { border-radius:200px; }
+.btn-square { border-radius:0; }
 .btn-primary.btn-ghost, .btn-primary.btn-ghost:focus { background-color:transparent; color:#337ab7; border:solid 1px #337ab7; }		/* @brand-primary */
 .btn-success.btn-ghost, .btn-success.btn-ghost:focus { background-color:transparent; color:#5cb85c; border:solid 1px #5cb85c; }		/* @brand-success */
 .btn-info.btn-ghost, .btn-info.btn-ghost:focus { background-color:transparent; color:#5bc0de; border:solid 1px #5bc0de; }			/* @brand-info */
@@ -119,6 +120,7 @@ body.mask-on { overflow: hidden; }
 #shoulder { top:90px; z-index:102; padding:0 15px; }
 #shoulder .alert { display:none; cursor:pointer; font-size:18px; border:1px solid #999; border:1px solid rgba(0,0,0,0.2); box-shadow:0 3px 9px rgba(0,0,0,.5); }
 #shoulder .alert strong { margin:10px; }
+#shoulder .alert .link { margin-left: 20px; }
 @media (max-width:1199px){
 #shoulder { top:50px; }
 }

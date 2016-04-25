@@ -33,7 +33,7 @@ type: *varible (boolean, set by user)*
 description: no backward mode (default value is "false") 
 
 ### functions
-* `notice(type, status, action, stay)`  
+* `notice(type, status, action, link, label)`  
 description: display notices on top of screen, hide in 3.5 seconds  
 dependency: `#shoulder` on page  
 return: current notice index, worked with `notice_change()`  
@@ -41,7 +41,8 @@ parameter:
   * type, string (`primary`/default `success` `info` `warning` `danger`)  
   * status, string (current status)  
   * action, string (suggested action)  
-  * stay, boolean (hide in 3.5 second if not set)  
+  * link, string (anchor link, hide in 3.5 second if not set)  
+  * label, string (anchor label)
 
 * `notice_change(type, status, action, index)`  
 description: change notice content  
@@ -242,8 +243,12 @@ description: adding gradiant shadow background to text (ideal for white text on 
 
 #### button
 * `btn-round`  
-description: button with round border  
-related: `btn` `btn-ghost` `btn-white`
+description: button with round border (border radius to max)  
+related: `btn` `btn-ghost` `btn-white` `btn-square`
+
+* `btn-square`  
+description: button with square border (remove border radius)  
+related: `btn` `btn-ghost` `btn-white` `btn-round`
 
 * `btn-ghost`  
 description: button with tansparent background and colored border *(change to your color scheme)*  

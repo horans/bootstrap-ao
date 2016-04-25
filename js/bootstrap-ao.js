@@ -16,10 +16,13 @@ if(bWidth < 1200){			//tablet break point
 	}
 }
 
-//no backward
+//mode
 var sMode = {
-    noback : false
+    noback  : false,
+    refresh : false
 };
+
+//no backward
 if(sMode.noback){
 	window.history.pushState(null, null, location.href);
 	window.onpopstate = function() {
@@ -29,16 +32,16 @@ if(sMode.noback){
 }
 
 //refresh on orientation change
-$(function() {
-	'use strict';
+if(sMode.refresh){
 	$(window).on("orientationchange", function() {
-	  window.location.reload();
+		'use strict';
+		window.location.reload();
 	});
-});
+}
 
 /** notice **/
 //show notice
-function notice(type, status, action, stay){
+function notice(type, status, action, link, label){
 	'use strict';
 	var nIndex;
 	if(status !== ''){
@@ -61,9 +64,14 @@ function notice(type, status, action, stay){
 				nIcon = 'question-circle';
 		}
 		nIndex = $('#shoulder .alert').length;
-		$('#shoulder').append('<div class="alert alert-' + type + ' alert-dismissible" role="alert" id="notice_' + nIndex + '"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button><div><i class="fa fa-fw fa-' + nIcon + ' transition-hs"></i><strong class="status transition-hs">' + status + '</strong><span class="action transition-hs">' + action + '</span></div></div>');
+		$('#shoulder').append('<div class="alert alert-' + type + ' alert-dismissible" role="alert" id="notice_' + nIndex + '"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button><div><i class="fa fa-fw fa-' + nIcon + ' transition-hs"></i><strong class="status transition-hs">' + status + '</strong><span class="action transition-hs">' + action + '</span><a class="link hidden" href="#"><span></span><i class="fa fa-fw fa-angle-double-right"></i></a></div></div>');
 		$('#shoulder .alert').eq(nIndex).slideDown();
-		if(!stay){
+		if(link){
+			if(link !== '#' && label !== ''){
+				$('#shoulder .alert').eq(nIndex).find('.link').removeClass('hidden').attr('href', sPage.home);
+				$('#shoulder .alert').eq(nIndex).find('.link span').text(label);
+			}
+		} else {
 			setTimeout(function(){
 				$('#shoulder .alert').eq(nIndex).slideUp();
 			}, 3500);
@@ -184,7 +192,7 @@ $(function() {
 				});
 			}
 		});
-	}, 500);
+	}, 1500);
 });
 
 //go to top
