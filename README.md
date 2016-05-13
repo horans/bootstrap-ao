@@ -201,7 +201,12 @@ description: image become gray
 description: image become a bit larger while hovering
 
 * `bg-cover`  
-description: background image is "center" and "cover", with "no-repeat"
+description: background image is "center" and "cover", with "no-repeat"  
+related: `bg-contain`
+
+* `bg-contain`  
+description: background image is "center" and "contain", with "no-repeat"  
+related: `bg-cover`
 
 #### text
 * `text-compact`  
@@ -297,7 +302,9 @@ related: `form-control`
 * add right margin to icon
 
 #### browser
-* remove yellow background for input autofill;
+* remove yellow background for input autofill
+* remove input/select round style
+* remove select arrow
 * remove list padding
 * remove focus ring
 * hide scroll bar
