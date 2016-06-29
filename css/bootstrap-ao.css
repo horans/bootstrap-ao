@@ -45,7 +45,7 @@
 .transition.delay.fast { -webkit-transition-delay: 0.3s; -moz-transition-delay: 0.3s; -o-transition-delay: 0.3s; transition-delay: 0.3s; }
 .transition.delay.slow { -webkit-transition-delay: 0.7s; -moz-transition-delay: 0.7s; -o-transition-delay: 0.7s; transition-delay: 0.7s; }
 .transition.ease { -webkit-transition-timing-function: ease; -moz-transition-timing-function: ease; -o-transition-timing-function: ease; transition-timing-function: ease; }
-a { -webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear; -ms-transition:all 0.5s linear; -o-transition:all 0.5s linear; transition:all 0.5s linear; }
+a, #shoulder { -webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear; -ms-transition:all 0.5s linear; -o-transition:all 0.5s linear; transition:all 0.5s linear; }
 .squeeze { overflow:hidden; }
 .squeeze.squeezed { max-height:0 !important; }
 
@@ -175,6 +175,8 @@ label.fa-input input[type=radio]:checked + span::before { content:"\f192"; color
 input:-webkit-autofill, input:-webkit-autofill:focus { -webkit-box-shadow: 0 0 0px 1000px white inset; box-shadow: 0 0 0px 1000px white inset; }
 input::-ms-clear,input::-ms-reveal,select::-ms-expand { display:none; }
 input, select { -webkit-appearance: none; -moz-appearance: none; appearance: none; border-radius: 0; }
+select { cursor: pointer; }
+select:disabled { cursor: not-allowed; }
 ul { -webkit-padding-start:0; list-style:none; padding:0; }
 li { padding:0; }
 .focus, :focus { outline:none !important; }

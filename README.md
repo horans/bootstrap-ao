@@ -304,7 +304,7 @@ related: `form-control`
 #### browser
 * remove yellow background for input autofill
 * remove input/select round style
-* remove select arrow
+* remove select arrow, change cursor style
 * remove list padding
 * remove focus ring
 * hide scroll bar

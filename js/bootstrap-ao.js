@@ -3,7 +3,7 @@
 //get browser info
 var bWidth = document.documentElement.clientWidth;
 var bHeight = document.documentElement.clientHeight;
-var bAgent	= window.navigator.userAgent;
+var bAgent	= window.navigator.userAgent.toLowerCase();
 var isMobile = false;
 var isTablet = false;
 var isDesktop = true;
@@ -274,7 +274,7 @@ function urlChng(param, value, push){
 //scroll to hash
 $(function(){
 	'use strict';
-	$('a').on('click', function(e){
+	$('body').on('click', 'a', function(e){
 		if($(this).attr('href').indexOf('#') === 0){
 			e.preventDefault();
 			e.stopPropagation();
