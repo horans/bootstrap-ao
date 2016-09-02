@@ -14,6 +14,17 @@
 .container-full.large { max-width:1200px; }
 .container-full.x-large { max-width:1400px; }
 
+/** layout **/
+.border-box, .border-box * { box-sizing: border-box; }
+.clear-both:before, .clear-both:after { display: table; content:" "; }
+.clear-both:after { clear: both; }
+.inline-block { display: inline-block; vertical-align: top; }
+a.a-block, .a-block a { display: block; text-decoration: none; }
+@media (min-width:800px) {
+.grid { display: inline-block; float: left; width: 50%; }
+.grid.right { float: right; }
+}
+
 /** position **/
 .fixed { position:fixed; width:100%; margin:0 auto; z-index:99; top:0; }
 .fixed.bottom { top:auto; bottom:0; }
@@ -43,18 +54,19 @@
 }
 
 /** animation **/
-.transition { -webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear; -ms-transition:all 0.5s linear; -o-transition:all 0.5s linear; transition:all 0.5s linear; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -o-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+.transition { -webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear; -ms-transition:all 0.5s linear; -o-transition:all 0.5s linear; transition:all 0.5s linear; }
 .transition.slow { -webkit-transition-duration:0.7s; -moz-transition-duration:0.7s; -o-transition-duration:0.7s; transition-duration:0.7s; }
 .transition.fast { -webkit-transition-duration:0.3s; -moz-transition-duration:0.3s; -o-transition-duration:0.3s; transition-duration:0.3s; }
 .transition.delay { -webkit-transition-delay: 0.5s; -moz-transition-delay: 0.5s; -o-transition-delay: 0.5s; transition-delay: 0.5s; }
 .transition.delay.fast { -webkit-transition-delay: 0.3s; -moz-transition-delay: 0.3s; -o-transition-delay: 0.3s; transition-delay: 0.3s; }
 .transition.delay.slow { -webkit-transition-delay: 0.7s; -moz-transition-delay: 0.7s; -o-transition-delay: 0.7s; transition-delay: 0.7s; }
 .transition.ease { -webkit-transition-timing-function: ease; -moz-transition-timing-function: ease; -o-transition-timing-function: ease; transition-timing-function: ease; }
-a, #shoulder { -webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear; -ms-transition:all 0.5s linear; -o-transition:all 0.5s linear; transition:all 0.5s linear; -moz-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -o-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+a, #shoulder { -webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear; -ms-transition:all 0.5s linear; -o-transition:all 0.5s linear; transition:all 0.5s linear; }
 .squeeze { overflow:hidden; }
 .squeeze.squeezed { max-height:0 !important; }
-.shrink { max-height: 0; opacity: 0; overflow:hidden; }
-.shrink.active { max-height: 400px; opacity: 1; }
+.shrink { max-height:0; opacity:0; overflow:hidden; }
+.shrink.shrink-part { opacity:1; max-height:200px; }
+.shrink.active { max-height:400px; opacity:1; -webkit-transition:max-height ease-in-out .7s; -moz-transition:max-height ease-in-out .7s; -ms-transition:max-height ease-in-out .7s; -o-transition:max-height ease-in-out .7s; transition:max-height ease-in-out .7s; }
 
 /** image **/
 .image { position:relative; overflow:hidden; }
@@ -64,6 +76,7 @@ img.lazy { opacity:0; }
 .img-gray { -webkit-filter:grayscale(1); -webkit-filter:grayscale(100%); filter:grayscale(100%); filter:gray; filter:url(#greyscale); }
 .bg-cover { background-size:cover; background-position:center center; background-repeat:no-repeat; }
 .bg-contain { background-size:contain; background-position:center center; background-repeat:no-repeat; }
+.bg-center { background-position:center center; background-repeat:no-repeat; }
 @media (min-width:1200px){
 img.img-zoom { -webkit-transition:all 1.5s ease-out; -moz-transition:all 1.5s ease-out; -ms-transition:all 1.5s ease-out; -o-transition:all 1.5s ease-out; transition:all 1.5s ease-out; }
 img.img-zoom:hover { -webkit-transform:scale(1.1,1.1); -moz-transform:scale(1.1,1.1); -ms-transform:scale(1.1,1.1); -o-transform:scale(1.1,1.1); transform:scale(1.1,1.1); }

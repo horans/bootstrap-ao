@@ -154,7 +154,7 @@ jQuery.fn.lazy = function(icon){
 				if(isTablet && iTab && iTab !== ''){
 					iUrl = iTab;
 				}
-				$('<img/>').attr('src', iUrl).load(function() {
+				$('<img/>').attr('src', iUrl).on('load', function() {
 					$(this).remove();
 					if(type === 2){
 						image.css('background-image', 'url(' + iUrl + ')');
@@ -277,9 +277,9 @@ $(function(){
 	$('body').on('click', 'a', function(e){
 		if($(this).attr('href').indexOf('#') === 0){
 			e.preventDefault();
-			e.stopPropagation();
+			//e.stopPropagation();
 			var hash = $(this).attr('href');
-			if(hash !== '#'){
+			if(hash !== '#' && $(hash).length === 1){
 				$('html, body').animate({ scrollTop: $(hash).offset().top }, 1500);
 			}
 		}

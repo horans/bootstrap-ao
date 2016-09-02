@@ -119,6 +119,24 @@ related: `container` `container-full`
 description: a centered container with max width of 1400px, work with `container`(with gutter) or `container-full`(no gutter)  
 related: `container` `container-full`
 
+#### layout
+* `border-box`  
+description: set element and its children "box-sizing: border-box"   
+
+* `clear-both`  
+description: add clearfix for element   
+related: `grid`
+
+* `inline-block`  
+description: set element to inline block and align to its top   
+
+* `a-block`  
+description: set anchor or anchors in element to block   
+
+* `grid`  
+description: simple half size grid on desktop   
+related: `clear-both`
+
 #### position
 * `fixed`  
 description: fixed position, top of the browser   
@@ -186,6 +204,15 @@ related: `transition` `fast` `slow` `ease`
 description: transition with "ease" rather than "linear", works with `transition`  
 related: `transition` `fast` `slow` `delay`
 
+* `shrink`  
+description: hidden element, add `active` to slide down.  
+related: `transition` `shrink-part`
+
+
+* `shrink-part`  
+description: half hidden element, add `active` to slide down.  
+related: `transition` `shrink`
+
 #### image
 * `image`  
 description: container for image element
@@ -206,6 +233,10 @@ related: `bg-contain`
 
 * `bg-contain`  
 description: background image is "center" and "contain", with "no-repeat"  
+related: `bg-cover`
+
+* `bg-center`  
+description: background image is "center" and "no-repeat"  
 related: `bg-cover`
 
 #### text
