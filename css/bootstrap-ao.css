@@ -19,7 +19,7 @@
 .clear-both:before, .clear-both:after { display: table; content:" "; }
 .clear-both:after { clear: both; }
 .inline-block { display: inline-block; vertical-align: top; }
-a.a-block, .a-block a { display: block; text-decoration: none; }
+a.a-block, .a-block a { display: block; height: 100%; text-decoration: none; }
 @media (min-width:800px) {
 .grid { display: inline-block; float: left; width: 50%; }
 .grid.right { float: right; }
@@ -54,14 +54,13 @@ a.a-block, .a-block a { display: block; text-decoration: none; }
 }
 
 /** animation **/
-.transition { -webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear; -ms-transition:all 0.5s linear; -o-transition:all 0.5s linear; transition:all 0.5s linear; }
+#shoulder, a, a::before, a::after, .transition, .transition::before, .transition::after { -webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear; -ms-transition:all 0.5s linear; -o-transition:all 0.5s linear; transition:all 0.5s linear; }
 .transition.slow { -webkit-transition-duration:0.7s; -moz-transition-duration:0.7s; -o-transition-duration:0.7s; transition-duration:0.7s; }
 .transition.fast { -webkit-transition-duration:0.3s; -moz-transition-duration:0.3s; -o-transition-duration:0.3s; transition-duration:0.3s; }
 .transition.delay { -webkit-transition-delay: 0.5s; -moz-transition-delay: 0.5s; -o-transition-delay: 0.5s; transition-delay: 0.5s; }
 .transition.delay.fast { -webkit-transition-delay: 0.3s; -moz-transition-delay: 0.3s; -o-transition-delay: 0.3s; transition-delay: 0.3s; }
 .transition.delay.slow { -webkit-transition-delay: 0.7s; -moz-transition-delay: 0.7s; -o-transition-delay: 0.7s; transition-delay: 0.7s; }
 .transition.ease { -webkit-transition-timing-function: ease; -moz-transition-timing-function: ease; -o-transition-timing-function: ease; transition-timing-function: ease; }
-a, #shoulder { -webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear; -ms-transition:all 0.5s linear; -o-transition:all 0.5s linear; transition:all 0.5s linear; }
 .squeeze { overflow:hidden; }
 .squeeze.squeezed { max-height:0 !important; }
 .shrink { max-height:0; opacity:0; overflow:hidden; }
