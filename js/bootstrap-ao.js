@@ -275,12 +275,14 @@ function urlChng(param, value, push){
 $(function(){
 	'use strict';
 	$('body').on('click', 'a', function(e){
-		if($(this).attr('href').indexOf('#') === 0){
-			e.preventDefault();
-			//e.stopPropagation();
-			var hash = $(this).attr('href');
-			if(hash !== '#' && $(hash).length === 1){
-				$('html, body').animate({ scrollTop: $(hash).offset().top }, 1500);
+		var hash = $(this).attr('href');
+		if(hash){
+			if(hash.indexOf('#') === 0){
+				e.preventDefault();
+				//e.stopPropagation();
+				if(hash !== '#' && $(hash).length === 1){
+					$('html, body').animate({ scrollTop: $(hash).offset().top }, 1500);
+				}
 			}
 		}
 	});

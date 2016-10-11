@@ -65,7 +65,7 @@ a.a-block, .a-block a { display: block; height: 100%; text-decoration: none; }
 .squeeze.squeezed { max-height:0 !important; }
 .shrink { max-height:0; opacity:0; overflow:hidden; }
 .shrink.shrink-part { opacity:1; max-height:200px; }
-.shrink.active { max-height:400px; opacity:1; -webkit-transition:max-height ease-in-out .7s; -moz-transition:max-height ease-in-out .7s; -ms-transition:max-height ease-in-out .7s; -o-transition:max-height ease-in-out .7s; transition:max-height ease-in-out .7s; }
+.shrink.active { max-height:400px; opacity:1; }
 
 /** image **/
 .image { position:relative; overflow:hidden; }
