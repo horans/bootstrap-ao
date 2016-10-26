@@ -4,15 +4,15 @@
 /********** custom component **********/
 /** container **/
 .container { position: relative; }
-.container.small { max-width:800px; font-size:100%; }
-.container.medium { max-width:1000px; }
-.container.large { max-width:1200px; }
-.container.x-large { max-width:1400px; }
+.container-sm { max-width:800px; }
+.container-md { max-width:1000px; }
+.container-lg { max-width:1200px; }
+.container-xl { max-width:1400px; }
 .container-full { margin:0 auto; position:relative; width:100%; }
-.container-full.small { max-width:800px; font-size:100%; }
-.container-full.medium { max-width:1000px; }
-.container-full.large { max-width:1200px; }
-.container-full.x-large { max-width:1400px; }
+.container-full.container-sm { max-width:800px; }
+.container-full.container-md { max-width:1000px; }
+.container-full.container-lg { max-width:1200px; }
+.container-full.container-xl { max-width:1400px; }
 
 /** layout **/
 .border-box, .border-box * { box-sizing: border-box; }

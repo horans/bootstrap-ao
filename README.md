@@ -103,19 +103,19 @@ parameter:
 description: always occupies 100% width of its parent element, similar to `container-fluid`, but ignore container size and grid gutter width  
 related: `container` `container-fluid`
 
-* `small`  
+* `container-sm`  
 description: a centered container with max width of 800px, work with `container`(with gutter) or `container-full`(no gutter)  
 related: `container` `container-full`
 
-* `medium`  
+* `container-md`  
 description: a centered container with max width of 1000px, work with `container`(with gutter) or `container-full`(no gutter)  
 related: `container` `container-full`
 
-* `large`  
+* `container-lg`  
 description: a centered container with max width of 1200px, work with `container`(with gutter) or `container-full`(no gutter)  
 related: `container` `container-full`
 
-* `x-large`  
+* `container-xl`  
 description: a centered container with max width of 1400px, work with `container`(with gutter) or `container-full`(no gutter)  
 related: `container` `container-full`
 
