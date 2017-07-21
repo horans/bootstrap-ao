@@ -1,72 +1,53 @@
 # bootstrap-ao
 (bootstrap) (a)dd (o)n components for common use
 
-## js: varibles and functions
-### varibles
+## js: variables and functions
+### variables
 * `bWidth`  
-type: *varible (interger, get on load)*  
+type: *variable (interger, get on load, resize)*  
 description: current browser width  
 related: `bHeight` `isMobile` `isTablet` `isDesktop`
 
 * `bHeight`  
-type: *varible (interger, get on load)*  
+type: *variable (interger, get on load, resize)*  
 description: current browser height  
 related: `bWidth` `isMobile` `isTablet` `isDesktop`
 
+* `bAgent`  
+type: *variable (string, get on load)*  
+description: current browser user-agent  
+related: `bWidth` `isMobile` `isTablet` `isDesktop`
+
 * `isMobile`  
-type: *varible (boolean, calculate on load)*  
-description: whether current browser width is less than 800px *(change to your break point)*  
+type: *variable (boolean, calculate on load, resize)*  
+description: whether current browser width <800px *(change to your break point)*  
 related: `bWidth` `bHeight` `isTablet` `isDesktop`
 
 * `isTablet`  
-type: *varible (boolean, calculate on load)*  
-description: whether current browser width is less than 1200px *(change to your break point)*  
+type: *variable (boolean, calculate on load, resize)*  
+description: whether current browser width <1200px *(change to your break point)*  
 related: `bWidth` `bHeight` `isTablet` `isDesktop`
 
 * `isDesktop`  
-type: *varible (boolean, calculate on load)*  
-description: whether current browser width is equal to/larger than 1200px *(change to your break point)*  
+type: *variable (boolean, calculate on load, resize)*  
+description: whether current browser width >=1200px *(change to your break point)*  
 related: `bWidth` `bHeight` `isMobile` `isTablet`
 
 * `sMode.noback`  
-type: *varible (boolean, set by user)*  
-description: no backward mode (default value is "false") 
+type: *variable (boolean, set by user)*  
+description: no backward mode ("false" as default) 
+
+* `sMode.refresh`  
+type: *variable (boolean, set by user)*  
+description: refresh page on orientation change ("false" as default) 
 
 ### functions
-* `notice(type, status, action, link, label)`  
-description: display notices on top of screen, hide in 3.5 seconds  
-dependency: `#shoulder` on page  
-return: current notice index, worked with `notice_change()`  
-parameter:
-  * type, string (`primary`/default `success` `info` `warning` `danger`)  
-  * status, string (current status)  
-  * action, string (suggested action)  
-  * link, string (anchor link, hide in 3.5 second if not set)  
-  * label, string (anchor label)
-
-* `notice_change(type, status, action, index)`  
-description: change notice content  
-dependency: `#shoulder` on page, `notice()` return value  
-return: none  
-parameter:
-  * type, string (`primary`/default `success` `info` `warning` `danger`)  
-  * status, string (current status)  
-  * action, string (suggested action)  
-  * index, interger (`notice()` return value)  
-
-* `element.lazy(icon)`  
-description: load image when its fully loaded  
-dependency: add `lazy` class to `img` element, and set `src` for placeholder image, `data-src` for true image url, and advanced `data-mobile`/`data-tablet` can be set for image for mobile/tablet device. (a: image will apply to `background-image` for a "non-img" element; b: animated placeholder icon needs [Font Awesome](https://github.com/FortAwesome/Font-Awesome))  
-return: none  
-parameter:
-  * element, jQuery object  
-  * icon, boolean (true/with placeholder icon)  
-
-* `toggleMask()`  
+* `toggleMask(switch)`  
 description: show translucent mask above page (forbid other action)  
 dependency: none  
 return: none  
-parameter: none  
+parameter:
+  * switch, string ('on/off', toggle without it)  
 
 * `gotoTop()`  
 description: scroll to page top  
@@ -83,17 +64,7 @@ parameter:
   * value, string (set '' to remove param)  
   * push, boolean (add browser history if set)  
 
-* `element.squeeze(speed)`  
-description: squeeze or expand element  
-dependency: element with `squeeze` class  
-return: none  
-parameter:
-  * element, jQuery object  
-  * speed, string (`fast` `slow`)  
-
 ### other
-* auto reload on orientation change (for mobile device)
-* add tooltip to links with `inactive` class, and stop page jumping
 * scroll to in page anchor, and prevent hash change
 
 ## css: style classes and tweaks
@@ -119,27 +90,46 @@ related: `container` `container-full`
 description: a centered container with max width of 1400px, work with `container`(with gutter) or `container-full`(no gutter)  
 related: `container` `container-full`
 
+* `col-xl-`  
+description: expand grid system to `col-xl-` version (browser width >1400px)  
+related: `container-xl`
+
 #### layout
 * `border-box`  
-description: set element and its children "box-sizing: border-box"   
+description: set element and its children "box-sizing: border-box"  
 
 * `clear-both`  
-description: add clearfix for element   
+description: add clearfix for element  
 related: `grid`
 
+* `inline`  
+description: set element to inline  
+
 * `inline-block`  
-description: set element to inline block and align to its top   
+description: set element to inline block and align to its top  
 
 * `a-block`  
-description: set anchor or anchors in element to block   
+description: set anchor or anchors in element to block  
 
 * `grid`  
-description: simple half size grid on desktop   
+description: simple half size grid on desktop  
 related: `clear-both`
+
+* `flex-box`  
+description: flex item container  
+related: `flex-item` `flex-reverse`
+
+* `flex-item`  
+description: flex item  
+related: `flex-box` `flex-reverse`
+
+* `flex-reverse`  
+description: flex item display in reverse order 
+related: `flex-box` `flex-reverse`
 
 #### position
 * `fixed`  
-description: fixed position, top of the browser   
+description: fixed position, top of the browser  
 related: `bottom`
 
 * `bottom`  
@@ -176,11 +166,11 @@ description: hidden parameter
 related: `hidden`
 
 * `hide-mobile`  
-description: hide element when browser's width is smaller than 1200px *(change to your break point)*  
+description: hide element when browser width <1200px *(change to your break point)*  
 related: `hidden` `hide-desktop`
 
 * `hide-desktop`
-description: hide element when browser's width is larger than 1200px *(change to your break point)*  
+description: hide element when browser width >1200px *(change to your break point)*  
 related: `hidden` `hide-mobile`
 
 #### animation
@@ -208,7 +198,6 @@ related: `transition` `fast` `slow` `delay`
 description: hidden element, add `active` to slide down.  
 related: `transition` `shrink-part`
 
-
 * `shrink-part`  
 description: half hidden element, add `active` to slide down.  
 related: `transition` `shrink`
@@ -227,6 +216,14 @@ description: image become gray
 * `img-zoom`  
 description: image become a bit larger while hovering
 
+* `img-center`  
+description: image cropped to center of its container  
+related: `img-center-v`
+
+* `img-center-v`  
+description: image height is large than width, work with `img-center`  
+related: `img-center`
+
 * `bg-cover`  
 description: background image is "center" and "cover", with "no-repeat"  
 related: `bg-contain`
@@ -238,6 +235,22 @@ related: `bg-cover`
 * `bg-center`  
 description: background image is "center" and "no-repeat"  
 related: `bg-cover`
+
+* `bg-responsive`  
+description: background image is responsive, cropped to center  
+related: `bg-16x9` `bg-4x1` `bg-3x1`
+
+* `bg-16x9`  
+description: background image is 16x9, work with `bg-responsive`  
+related: `bg-responsive` `bg-4x1` `bg-3x1`
+
+* `bg-4x1`  
+description: background image is 4x1, work with `bg-responsive`  
+related: `bg-responsive` `bg-16x9` `bg-3x1`
+
+* `bg-3x1`  
+description: background image is 3x1, work with `bg-responsive`  
+related: `bg-responsive` `bg-16x9` `bg-4x1`
 
 #### text
 * `text-compact`  
@@ -277,6 +290,12 @@ description: hide overflow text with ellipsis for single line
 * `bg-shadow`  
 description: adding gradiant shadow background to text (ideal for white text on image)  
 
+* `bg-white`  
+description: element with white background  
+
+* `underline`  
+description: text with underline (like traditional link)  
+
 #### button
 * `btn-round`  
 description: button with round border (border radius to max)  
@@ -295,17 +314,36 @@ description: button with tansparent background and white text/border color
 related: `btn` `btn-round` `btn-ghost`
 
 #### row
+* `col`  
+description: extra class for column  
+related: `row`
+
 * `row-table`  
-description: item of the row will share same height, and centered vertically *(will made row become non-floating)*  
-related: `row` `row-compact`
+description: item of the row will share same height, and centered vertically, work with `row` *(will made row become non-floating)*  
+related: `row-xs` `row-sm` `row-md` `row-lg`
+
+* `row-xs`  
+description: row fallback to normal when browser width <800px, work with `row-table`  
+related: `row-sm` `row-md` `row-lg`
+
+* `row-sm`  
+description: row fallback to normal when browser width <1000px, work with `row-table`  
+related: `row-xs` `row-md` `row-lg`
+
+* `row-md`  
+description: row fallback to normal when browser width <1200px, work with `row-table`  
+related: `row-xs` `row-sm` `row-lg`
+
+* `row-lg`  
+description: row fallback to normal when browser width <1400px, work with `row-table`  
+related: `row-xs` `row-sm` `row-md`
 
 * `row-compact`  
-description: remove margin of the row, and remove padding of its children  
-related: `row` `row-table`
+description: remove margin of the row, and remove padding of its children, work with `row`  
 
 #### modal
 * `modal-full`  
-description: a full page modal when browser width is less than 1200px *(change to your break point)*, works with `modal`  
+description: a full page modal when browser width <1200px *(change to your break point)*, works with `modal`  
 related: `modal`
 
 #### carousel
