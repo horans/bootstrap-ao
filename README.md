@@ -1,6 +1,6 @@
 # Bootstrap AO
 
-Customized __Bootstrap__ __A__dd __O__n styles for common use.
+Customized **Bootstrap** **A**dd **O**n styles for common use.
 (Compatible with [Bootstrap](https://github.com/twbs/bootstrap) v4.x)
 
 ## Usage
@@ -16,7 +16,7 @@ Customized __Bootstrap__ __A__dd __O__n styles for common use.
 
 ### Condition
 
-* hide/show elements under condition:
+* hide/show elements under conditions:
 
 ```html
 <div data-dev="desktop">
