@@ -1,0 +1,312 @@
+/*****************************************************
+*  project: boostrap ao                              *
+*  description: source code for add on               *
+*  author: horans@gmail.com                          *
+*  url: https://github.com/horans/bootstrap-ao       *
+*  update: 180813                                    *
+*****************************************************/
+//functions
+@function add-important($n) {
+  @return $n !important;
+}
+
+//mixins
+@mixin element-hide {
+  display: add-important(none);
+  margin: add-important(0);
+}
+
+//variables
+%empty-holder::before {
+  content: "\00a0\2000\00a0";
+}
+%element-hide {
+  @include element-hide;
+}
+%element-fade {
+  z-index: -1;
+  opacity: 0;
+  transition: $transition-base;
+}
+%element-show {
+  z-index: 2;
+  opacity: 1;
+}
+$shadow: 0 3px 6px rgba(0, 0, 0, .5) !default;
+$transition-slow: .4s !default;
+$grid-gutter-half: ($grid-gutter-width / 2) !default;
+
+//device, system/platform, and target display
+*[data-dev="auto"] .dev-mobile,
+*[data-dev="desktop"] .dev-mobile,
+*[data-dev="mobile"] .dev-desktop,
+*[data-sys="auto"] .sys-mac,
+*[data-sys="auto"] .sys-ios,
+*[data-sys="auto"] .sys-android,
+*[data-sys="win"] .sys-mac,
+*[data-sys="mac"] .sys-win,
+*[data-sys="android"] .sys-ios,
+*[data-sys="ios"] .sys-andriod,
+*[data-tar="auto"] .tar-alt,
+*[data-tar="nor"] .tar-alt,
+*[data-tar="alt"] .tar-nor, {
+  @extend %element-hide;
+}
+
+//animation
+.transition {
+  transition: $transition-base;
+  &::before,
+  &::after {
+    transition: $transition-base;
+  }
+  &.linear {
+    transition-timing-function: linear;
+  }
+  &.slow {
+    transition-duration: $transition-slow;
+  }
+}
+a {
+  @extend .transition;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+//layout
+@each $size, $width in $container-max-widths {
+  .container-#{$size} {
+    max-width: $width;
+    margin: 0 auto;
+  }
+}
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+.center-h,
+.center-v,
+.center-a {
+  position: relative;
+  > .center-e {
+    position: absolute;
+  }
+}
+.center-h > .center-e {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.center-v > .center-e {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.center-a > .center-e {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.center-absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+//display
+.inline-block {
+  display: inline-block;
+  vertical-align: top;
+}
+.empty-holder {
+  @extend %empty-holder;
+}
+.transparent {
+  opacity: 0;
+}
+.translucent {
+  opacity: .5;
+}
+.parameter {
+  z-index: -2;
+  @extend %element-hide;
+}
+.with-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.with-back {
+  position: relative;
+  overflow: hidden;
+  > * {
+    position: relative;
+  }
+  > .with-full {
+    position: absolute;
+    z-index: 0;
+  }
+  > .with-mask::before {
+    z-index: 1;
+  }
+}
+.shrink {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  &.shrink-partial {
+    max-height: 200px;
+  }
+  &.active {
+    max-height: 400px;
+    opacity: 1;
+  }
+}
+
+//shadow
+.with-text-shadow {
+  text-shadow: $shadow;
+}
+.with-box-shadow {
+  box-shadow: $shadow;
+}
+
+//cursor
+.with-hand {
+  cursor: pointer;
+}
+.with-arrow {
+  cursor: default;
+}
+.with-stop {
+  cursor: not-allowed;
+}
+
+//user
+.no-interaction {
+  pointer-events: none;
+}
+.no-selection {
+  user-select: none;
+}
+
+//media
+.bg-center {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bg-cover {
+  @extend .bg-center;
+  background-size: cover;
+}
+.bg-contain {
+  @extend .bg-center;
+  background-size: contain;
+}
+.with-media {
+  position: relative;
+  overflow: hidden;
+}
+.media-center {
+  position: absolute;
+  top: -100%;
+  right: -100%;
+  bottom: -100%;
+  left: -100%;
+  width: 100%;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  margin: auto;
+  &.media-center-vertical {
+    width: auto;
+    height: 100%;
+  }
+}
+.with-mask {
+  position: relative;
+  &::before {
+    @extend .with-full;
+    @extend .no-interaction;
+    z-index: 1;
+    content: "";
+    background-color: #000;
+    opacity: .25;
+  }
+  &.with-mask-light::before {
+    opacity: .15;
+  }
+  &.with-mask-dark::before {
+    opacity: .5;
+  }
+}
+
+//colors: gray
+@for $i from 1 through 9 {
+  @each $j in bg, text, border {
+    .#{$j}-gray-#{$i} {
+      $k: if($j == text, "", if($j == bg, "background", "border") + "-");
+      #{$k}color: gray($i + "00");
+    }
+  }
+}
+
+//colors: brightness
+@each $i in primary, secondary {
+  @each $j in bg, text {
+    @each $k in dark, light {
+      @each $l in 10%, 20% {
+        $m: $k + if($l == 20%, "er", "");
+        .#{$j}-#{$i}-#{$m} {
+          $n: if($j == bg, "background-", "");
+          $o: if($i == primary, $primary, $secondary);
+          #{$n}color: if($k == dark, darken($o, $l), lighten($o, $l));
+        }
+      }
+    }
+  }
+}
+
+//font and text
+.font-weight-extra-light {
+  font-weight: 200;
+}
+.font-weight-extra-bold {
+  font-weight: 800;
+}
+.font-size-normal {
+  font-size: $font-size-base;
+}
+.font-size-large {
+  font-size: ($font-size-base * 1.125);
+}
+.font-size-huge {
+  font-size: $font-size-lg;
+}
+.font-size-small {
+  font-size: $font-size-sm;
+}
+.font-size-tiny {
+  font-size: ($font-size-base * .75);
+}
+
+//link
+.link-inherit a:not(.btn) {
+  color: add-important(inherit);
+}
+@each $theme, $color in $theme-colors {
+  .link-inherit a.text-#{$theme} {
+    color: add-important($color);
+  }
+}
