@@ -1,6 +1,6 @@
 # Bootstrap AO
 
-(Bootstrap) (A)dd (O)n styles for common use.
+Customized __Bootstrap__ __A__dd __O__n styles for common use.
 (Compatible with [Bootstrap](https://github.com/twbs/bootstrap) v4.x)
 
 ## Usage
@@ -86,23 +86,18 @@
 </div>
 ```
 
-```html
-<div>
-  <div class="center-absolute">horizontal centered</div>
-</div>
-```
-
 ### Display
 
 * `.inline-block`: display as "inline-block" and vertical-align to "top"
-* `.empty-holder`: invisible block that always occupy space
+* `.empty-holder`: invisible square that always occupy space
 * `.transparent`: zero opacity
 * `.translucent`: half opacity
 * `.shrink`: container with zero height and zero opacity
-  * `.shrink.shrink-partial`: with 200px max height
   * `.shrink.active`: give 400px max height and full opacity
+  * `.shrink.transition`: animate the change
+  * `.shrink.shrink-partial`: with 200px max height
 * `.with-full`: an absolute full size elment, same size as its parent
-* `.with-back`: container can have background
+* `.with-back`: container has background
 
 ```html
 <div class="with-back">
