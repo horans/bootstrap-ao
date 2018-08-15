@@ -88,6 +88,7 @@ Customized **Bootstrap** **A**dd **O**n styles for common use.
 
 ### Display
 
+* `.hide-overflow`: set overflow as "none"
 * `.inline-block`: display as "inline-block" and vertical-align to "top"
 * `.empty-holder`: invisible square that always occupy space
 * `.transparent`: zero opacity
@@ -169,7 +170,18 @@ Customized **Bootstrap** **A**dd **O**n styles for common use.
 </div>
 ```
 
+### Filter
+
+* `.bg-filter`: add filter to background image
+  * `.bg-filter.bg-filter-blur`: blur and zoom in a bit
+  * `.bg-filter.bg-filter-grayscale`: black and white
+  * `.bg-filter.bg-filter-empty`: container has no children
+
 ## Change Log
+
+__180815__
+
+* add background filter
 
 __180813__
 

@@ -3,7 +3,7 @@
 *  description: css file for distribution            *
 *  author: horans@gmail.com                          *
 *  url: https://github.com/horans/bootstrap-ao       *
-*  update: 180813                                    *
+*  update: 180815                                    *
 *****************************************************/
 .empty-holder::before {
   content: "\00a0\2000\00a0";
@@ -132,6 +132,10 @@
   bottom: 0;
   left: 0;
   margin: auto;
+}
+
+.hide-overflow {
+  overflow: hidden;
 }
 
 .inline-block {
@@ -512,4 +516,57 @@
 
 .link-inherit a.text-dark {
   color: #343a40 !important;
+}
+
+.bg-filter {
+  position: relative;
+}
+
+.bg-filter > * {
+  position: relative;
+  z-index: 2;
+}
+
+.bg-filter::before, .bg-filter::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+}
+
+.bg-filter.bg-filter-empty::before, .bg-filter.bg-filter-empty::after {
+  position: relative;
+}
+
+.bg-filter::before {
+  z-index: 1;
+  background: inherit;
+}
+
+.bg-filter::after {
+  z-index: 0;
+  content: none;
+}
+
+.bg-filter-blur {
+  overflow: hidden;
+}
+
+.bg-filter-blur::before {
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.bg-filter-blur::after {
+  content: "";
+  background: #fff;
+}
+
+.bg-filter-grayscale {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
