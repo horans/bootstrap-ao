@@ -3,7 +3,7 @@
 *  description: css file for distribution            *
 *  author: horans@gmail.com                          *
 *  url: https://github.com/horans/bootstrap-ao       *
-*  update: 180815                                    *
+*  update: 181112                                    *
 *****************************************************/
 .empty-holder::before {
   content: "\00a0\2000\00a0";
@@ -18,7 +18,7 @@
 *[data-sys="win"] .sys-mac,
 *[data-sys="mac"] .sys-win,
 *[data-sys="android"] .sys-ios,
-*[data-sys="ios"] .sys-andriod,
+*[data-sys="ios"] .sys-android,
 *[data-tar="auto"] .tar-alt,
 *[data-tar="nor"] .tar-alt,
 *[data-tar="alt"] .tar-nor, .parameter {
@@ -64,24 +64,32 @@
   }
 }
 
-.container-sm {
-  max-width: 540px;
-  margin: 0 auto;
+@media (min-width: 576px) {
+  .container-sm {
+    max-width: 540px;
+    margin: 0 auto;
+  }
 }
 
-.container-md {
-  max-width: 720px;
-  margin: 0 auto;
+@media (min-width: 768px) {
+  .container-md {
+    max-width: 720px;
+    margin: 0 auto;
+  }
 }
 
-.container-lg {
-  max-width: 960px;
-  margin: 0 auto;
+@media (min-width: 992px) {
+  .container-lg {
+    max-width: 960px;
+    margin: 0 auto;
+  }
 }
 
-.container-xl {
-  max-width: 1140px;
-  margin: 0 auto;
+@media (min-width: 1200px) {
+  .container-xl {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
 }
 
 .flex-row-reverse {

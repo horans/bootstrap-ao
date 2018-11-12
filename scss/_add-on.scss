@@ -1,3 +1,10 @@
+/*****************************************************
+*  project: boostrap ao                              *
+*  description: source code for add on               *
+*  author: horans@gmail.com                          *
+*  url: https://github.com/horans/bootstrap-ao       *
+*  update: 181112                                    *
+*****************************************************/
 // customize and add on
 
 // functions
@@ -41,7 +48,7 @@ $grid-gutter-half: ($grid-gutter-width / 2) !default;
 *[data-sys="win"] .sys-mac,
 *[data-sys="mac"] .sys-win,
 *[data-sys="android"] .sys-ios,
-*[data-sys="ios"] .sys-andriod,
+*[data-sys="ios"] .sys-android,
 *[data-tar="auto"] .tar-alt,
 *[data-tar="nor"] .tar-alt,
 *[data-tar="alt"] .tar-nor, {
@@ -76,9 +83,11 @@ a {
 
 // layout
 @each $size, $width in $container-max-widths {
-  .container-#{$size} {
-    max-width: $width;
-    margin: 0 auto;
+  @include media-breakpoint-up($size) {
+    .container-#{$size} {
+      max-width: $width;
+      margin: 0 auto;
+    }
   }
 }
 .flex-row-reverse {

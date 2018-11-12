@@ -179,10 +179,17 @@ Customized **Bootstrap** **A**dd **O**n styles for common use.
 
 ## Change Log
 
-__180815__
+```text
+181115
+* minor tweaks and fixes
+```
 
+```text
+180815
 * add background filter
+```
 
-__180813__
-
+```text
+180813
 * major update for bt4
+```
