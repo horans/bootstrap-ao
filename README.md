@@ -144,13 +144,17 @@ Customized **Bootstrap** **A**dd **O**n styles for common use.
   * `.bg-gray-1` to `.bg-gray-9`
   * `.text-gray-1` to `.text-gray-9`
   * `.border-gray-1` to `.border-gray-9`
-* brightness:
+* brightness: (+-10%/20%/35%)
   * primary:
-    * `.bg-primary-darker`, `bg-primary-dark`, `bg-primary-light` and `bg-primary-lighter`
-    * `.text-primary-darker`, `text-primary-dark`, `text-primary-light` and `text-primary-lighter`
+    * `.bg-primary-dark`, `bg-primary-darker`, `bg-primary-darkest`,
+    * `.bg-primary-light`, `bg-primary-lighter`, `bg-primary-lightest`.
+    * `.text-primary-dark`, `text-primary-darker`, `.text-primary-darkest`,
+    * `.text-primary-light`, `.text-primary-lighter`, `.text-primary-lightest`.
   * secondary:
-    * `.bg-secondary-darker`, `bg-secondary-dark`, `bg-secondary-light` and `bg-secondary-lighter`
-    * `.text-secondary-darker`, `text-secondary-dark`, `text-secondary-light`, `text-secondary-lighter`
+    * `.bg-secondary-dark`, `bg-secondary-darker`, `bg-secondary-darkest`,
+    * `.bg-secondary-light`, `bg-secondary-lighter`, `bg-secondary-lightest`.
+    * `.text-secondary-dark`, `text-secondary-darker`, `.text-secondary-darkest`,
+    * `.text-secondary-light`, `.text-secondary-lighter`, `.text-secondary-lightest`.
 
 ### Font and Text
 
@@ -158,9 +162,10 @@ Customized **Bootstrap** **A**dd **O**n styles for common use.
   * `.font-weight-extra-light`
   * `.font-weight-extra-bold`
 * font size:
-  * `.font-size-normal`
-  * `.font-size-large`, `.font-size-huge`
-  * `.font-size-small`, `.font-size-tiny`
+  * `.font-size-normal`(16px)
+  * `.font-size-large`(18px), `.font-size-huge`(20px)
+  * `.font-size-extra`(22px), `.font-size-super`(24px)
+  * `.font-size-small`(14px), `.font-size-tiny`(12px)
 * link color inherit:
 
 ```html
@@ -180,8 +185,9 @@ Customized **Bootstrap** **A**dd **O**n styles for common use.
 ## Change Log
 
 ```text
-181115
-* minor tweaks and fixes
+181114
+* add darkest/lightest color
+* add extra/super font size
 ```
 
 ```text

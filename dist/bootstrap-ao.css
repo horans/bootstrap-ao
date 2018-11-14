@@ -3,10 +3,11 @@
 *  description: css file for distribution            *
 *  author: horans@gmail.com                          *
 *  url: https://github.com/horans/bootstrap-ao       *
-*  update: 181112                                    *
+*  update: 181114                                    *
 *****************************************************/
 .empty-holder::before {
-  content: "\00a0\2000\00a0";
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  content: "\2007\2008\2009";
 }
 
 *[data-dev="auto"] .dev-mobile,
@@ -406,12 +407,20 @@
   background-color: #004a99;
 }
 
+.bg-primary-darkest {
+  background-color: #00254d;
+}
+
 .bg-primary-light {
   background-color: #3395ff;
 }
 
 .bg-primary-lighter {
   background-color: #66b0ff;
+}
+
+.bg-primary-lightest {
+  background-color: #b3d7ff;
 }
 
 .text-primary-dark {
@@ -422,12 +431,20 @@
   color: #004a99;
 }
 
+.text-primary-darkest {
+  color: #00254d;
+}
+
 .text-primary-light {
   color: #3395ff;
 }
 
 .text-primary-lighter {
   color: #66b0ff;
+}
+
+.text-primary-lightest {
+  color: #b3d7ff;
 }
 
 .bg-secondary-dark {
@@ -438,12 +455,20 @@
   background-color: #3d4246;
 }
 
+.bg-secondary-darkest {
+  background-color: #191b1d;
+}
+
 .bg-secondary-light {
   background-color: #868e96;
 }
 
 .bg-secondary-lighter {
   background-color: #a1a8ae;
+}
+
+.bg-secondary-lightest {
+  background-color: #caced1;
 }
 
 .text-secondary-dark {
@@ -454,12 +479,20 @@
   color: #3d4246;
 }
 
+.text-secondary-darkest {
+  color: #191b1d;
+}
+
 .text-secondary-light {
   color: #868e96;
 }
 
 .text-secondary-lighter {
   color: #a1a8ae;
+}
+
+.text-secondary-lightest {
+  color: #caced1;
 }
 
 .font-weight-extra-light {
@@ -480,6 +513,14 @@
 
 .font-size-huge {
   font-size: 1.25rem;
+}
+
+.font-size-extra {
+  font-size: 1.375rem;
+}
+
+.font-size-super {
+  font-size: 1.5rem;
 }
 
 .font-size-small {

@@ -3,7 +3,7 @@
 *  description: source code for add on               *
 *  author: horans@gmail.com                          *
 *  url: https://github.com/horans/bootstrap-ao       *
-*  update: 181112                                    *
+*  update: 181114                                    *
 *****************************************************/
 // customize and add on
 
@@ -20,7 +20,8 @@
 
 // variables
 %empty-holder::before {
-  content: "\00a0\2000\00a0";
+  font-family: $font-family-monospace;
+  content: "\2007\2008\2009";
 }
 %element-hide {
   @include element-hide;
@@ -273,8 +274,8 @@ a {
 @each $i in primary, secondary {
   @each $j in bg, text {
     @each $k in dark, light {
-      @each $l in 10%, 20% {
-        $m: $k + if($l == 20%, "er", "");
+      @each $l in 10%, 20%, 35% {
+        $m: $k + if($l == 10%, "", ("e" + if($l == 20%, "r", "st")));
         .#{$j}-#{$i}-#{$m} {
           $n: if($j == bg, "background-", "");
           $o: if($i == primary, $primary, $secondary);
@@ -300,6 +301,12 @@ a {
 }
 .font-size-huge {
   font-size: $font-size-lg;
+}
+.font-size-extra {
+  font-size: ($font-size-base * 1.375);
+}
+.font-size-super {
+  font-size: ($font-size-base * 1.5);
 }
 .font-size-small {
   font-size: $font-size-sm;
