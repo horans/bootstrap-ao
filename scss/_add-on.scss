@@ -3,7 +3,7 @@
 *  description: source code for add on               *
 *  author: horans@gmail.com                          *
 *  url: https://github.com/horans/bootstrap-ao       *
-*  update: 181114                                    *
+*  update: 181126                                    *
 *****************************************************/
 // customize and add on
 
@@ -47,9 +47,17 @@ $grid-gutter-half: ($grid-gutter-width / 2) !default;
 *[data-sys="auto"] .sys-ios,
 *[data-sys="auto"] .sys-android,
 *[data-sys="win"] .sys-mac,
+*[data-sys="win"] .sys-ios,
+*[data-sys="win"] .sys-android,
 *[data-sys="mac"] .sys-win,
+*[data-sys="mac"] .sys-ios,
+*[data-sys="mac"] .sys-android,
 *[data-sys="android"] .sys-ios,
+*[data-sys="android"] .sys-win,
+*[data-sys="android"] .sys-mac,
 *[data-sys="ios"] .sys-android,
+*[data-sys="ios"] .sys-win,
+*[data-sys="ios"] .sys-mac,
 *[data-tar="auto"] .tar-alt,
 *[data-tar="nor"] .tar-alt,
 *[data-tar="alt"] .tar-nor, {
@@ -228,10 +236,10 @@ a {
 }
 .media-center {
   position: absolute;
-  top: -100%;
-  right: -100%;
-  bottom: -100%;
-  left: -100%;
+  top: -200%;
+  right: -200%;
+  bottom: -200%;
+  left: -200%;
   width: 100%;
   min-width: 100%;
   height: auto;
@@ -272,14 +280,14 @@ a {
 
 // colors: brightness
 @each $i in primary, secondary {
-  @each $j in bg, text {
+  @each $j in bg, text, border {
     @each $k in dark, light {
       @each $l in 10%, 20%, 35% {
         $m: $k + if($l == 10%, "", ("e" + if($l == 20%, "r", "st")));
         .#{$j}-#{$i}-#{$m} {
-          $n: if($j == bg, "background-", "");
+          $n: if($j == bg, "background-", if($j == border, "border-", ""));
           $o: if($i == primary, $primary, $secondary);
-          #{$n}color: if($k == dark, darken($o, $l), lighten($o, $l));
+          #{$n}color: add-important(if($k == dark, darken($o, $l), lighten($o, $l)));
         }
       }
     }

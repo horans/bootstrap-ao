@@ -3,7 +3,7 @@
 *  description: css file for distribution            *
 *  author: horans@gmail.com                          *
 *  url: https://github.com/horans/bootstrap-ao       *
-*  update: 181114                                    *
+*  update: 181126                                    *
 *****************************************************/
 .empty-holder::before {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -17,9 +17,17 @@
 *[data-sys="auto"] .sys-ios,
 *[data-sys="auto"] .sys-android,
 *[data-sys="win"] .sys-mac,
+*[data-sys="win"] .sys-ios,
+*[data-sys="win"] .sys-android,
 *[data-sys="mac"] .sys-win,
+*[data-sys="mac"] .sys-ios,
+*[data-sys="mac"] .sys-android,
 *[data-sys="android"] .sys-ios,
+*[data-sys="android"] .sys-win,
+*[data-sys="android"] .sys-mac,
 *[data-sys="ios"] .sys-android,
+*[data-sys="ios"] .sys-win,
+*[data-sys="ios"] .sys-mac,
 *[data-tar="auto"] .tar-alt,
 *[data-tar="nor"] .tar-alt,
 *[data-tar="alt"] .tar-nor, .parameter {
@@ -256,10 +264,10 @@
 
 .media-center {
   position: absolute;
-  top: -100%;
-  right: -100%;
-  bottom: -100%;
-  left: -100%;
+  top: -200%;
+  right: -200%;
+  bottom: -200%;
+  left: -200%;
   width: 100%;
   min-width: 100%;
   height: auto;
@@ -400,99 +408,147 @@
 }
 
 .bg-primary-dark {
-  background-color: #0062cc;
+  background-color: #0062cc !important;
 }
 
 .bg-primary-darker {
-  background-color: #004a99;
+  background-color: #004a99 !important;
 }
 
 .bg-primary-darkest {
-  background-color: #00254d;
+  background-color: #00254d !important;
 }
 
 .bg-primary-light {
-  background-color: #3395ff;
+  background-color: #3395ff !important;
 }
 
 .bg-primary-lighter {
-  background-color: #66b0ff;
+  background-color: #66b0ff !important;
 }
 
 .bg-primary-lightest {
-  background-color: #b3d7ff;
+  background-color: #b3d7ff !important;
 }
 
 .text-primary-dark {
-  color: #0062cc;
+  color: #0062cc !important;
 }
 
 .text-primary-darker {
-  color: #004a99;
+  color: #004a99 !important;
 }
 
 .text-primary-darkest {
-  color: #00254d;
+  color: #00254d !important;
 }
 
 .text-primary-light {
-  color: #3395ff;
+  color: #3395ff !important;
 }
 
 .text-primary-lighter {
-  color: #66b0ff;
+  color: #66b0ff !important;
 }
 
 .text-primary-lightest {
-  color: #b3d7ff;
+  color: #b3d7ff !important;
+}
+
+.border-primary-dark {
+  border-color: #0062cc !important;
+}
+
+.border-primary-darker {
+  border-color: #004a99 !important;
+}
+
+.border-primary-darkest {
+  border-color: #00254d !important;
+}
+
+.border-primary-light {
+  border-color: #3395ff !important;
+}
+
+.border-primary-lighter {
+  border-color: #66b0ff !important;
+}
+
+.border-primary-lightest {
+  border-color: #b3d7ff !important;
 }
 
 .bg-secondary-dark {
-  background-color: #545b62;
+  background-color: #545b62 !important;
 }
 
 .bg-secondary-darker {
-  background-color: #3d4246;
+  background-color: #3d4246 !important;
 }
 
 .bg-secondary-darkest {
-  background-color: #191b1d;
+  background-color: #191b1d !important;
 }
 
 .bg-secondary-light {
-  background-color: #868e96;
+  background-color: #868e96 !important;
 }
 
 .bg-secondary-lighter {
-  background-color: #a1a8ae;
+  background-color: #a1a8ae !important;
 }
 
 .bg-secondary-lightest {
-  background-color: #caced1;
+  background-color: #caced1 !important;
 }
 
 .text-secondary-dark {
-  color: #545b62;
+  color: #545b62 !important;
 }
 
 .text-secondary-darker {
-  color: #3d4246;
+  color: #3d4246 !important;
 }
 
 .text-secondary-darkest {
-  color: #191b1d;
+  color: #191b1d !important;
 }
 
 .text-secondary-light {
-  color: #868e96;
+  color: #868e96 !important;
 }
 
 .text-secondary-lighter {
-  color: #a1a8ae;
+  color: #a1a8ae !important;
 }
 
 .text-secondary-lightest {
-  color: #caced1;
+  color: #caced1 !important;
+}
+
+.border-secondary-dark {
+  border-color: #545b62 !important;
+}
+
+.border-secondary-darker {
+  border-color: #3d4246 !important;
+}
+
+.border-secondary-darkest {
+  border-color: #191b1d !important;
+}
+
+.border-secondary-light {
+  border-color: #868e96 !important;
+}
+
+.border-secondary-lighter {
+  border-color: #a1a8ae !important;
+}
+
+.border-secondary-lightest {
+  border-color: #caced1 !important;
 }
 
 .font-weight-extra-light {
@@ -619,3 +675,4 @@
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
+/*# sourceMappingURL=bootstrap.css.map */

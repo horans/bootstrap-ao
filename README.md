@@ -150,11 +150,15 @@ Customized **Bootstrap** **A**dd **O**n styles for common use.
     * `.bg-primary-light`, `bg-primary-lighter`, `bg-primary-lightest`.
     * `.text-primary-dark`, `text-primary-darker`, `.text-primary-darkest`,
     * `.text-primary-light`, `.text-primary-lighter`, `.text-primary-lightest`.
+    * `.border-primary-dark`, `border-primary-darker`, `.border-primary-darkest`,
+    * `.border-primary-light`, `.border-primary-lighter`, `.border-primary-lightest`.
   * secondary:
     * `.bg-secondary-dark`, `bg-secondary-darker`, `bg-secondary-darkest`,
     * `.bg-secondary-light`, `bg-secondary-lighter`, `bg-secondary-lightest`.
     * `.text-secondary-dark`, `text-secondary-darker`, `.text-secondary-darkest`,
     * `.text-secondary-light`, `.text-secondary-lighter`, `.text-secondary-lightest`.
+    * `.border-secondary-dark`, `border-secondary-darker`, `.border-secondary-darkest`,
+    * `.border-secondary-light`, `.border-secondary-lighter`, `.border-secondary-lightest`.
 
 ### Font and Text
 
@@ -183,6 +187,11 @@ Customized **Bootstrap** **A**dd **O**n styles for common use.
   * `.bg-filter.bg-filter-empty`: container has no children
 
 ## Change Log
+
+```text
+181126
+* apply brightness to border
+```
 
 ```text
 181114
