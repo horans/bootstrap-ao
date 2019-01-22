@@ -3,9 +3,8 @@
 *  description: source code for add on               *
 *  author: horans@gmail.com                          *
 *  url: https://github.com/horans/bootstrap-ao       *
-*  update: 181126                                    *
+*  update: 190122                                    *
 *****************************************************/
-// customize and add on
 
 // functions
 @function add-important($n) {
@@ -29,7 +28,7 @@
 %element-fade {
   z-index: -1;
   opacity: 0;
-  transition: $transition-base;
+  @include transition($transition-base);
 }
 %element-show {
   z-index: 2;
@@ -37,7 +36,6 @@
 }
 $shadow: 0 3px 6px rgba(0, 0, 0, .5) !default;
 $transition-slow: .4s !default;
-$grid-gutter-half: ($grid-gutter-width / 2) !default;
 
 // device, system/platform, and target display
 *[data-dev="auto"] .dev-mobile,
@@ -46,18 +44,27 @@ $grid-gutter-half: ($grid-gutter-width / 2) !default;
 *[data-sys="auto"] .sys-mac,
 *[data-sys="auto"] .sys-ios,
 *[data-sys="auto"] .sys-android,
+*[data-sys="auto"] .sys-other,
 *[data-sys="win"] .sys-mac,
 *[data-sys="win"] .sys-ios,
 *[data-sys="win"] .sys-android,
+*[data-sys="win"] .sys-other,
 *[data-sys="mac"] .sys-win,
 *[data-sys="mac"] .sys-ios,
 *[data-sys="mac"] .sys-android,
+*[data-sys="mac"] .sys-other,
 *[data-sys="android"] .sys-ios,
 *[data-sys="android"] .sys-win,
 *[data-sys="android"] .sys-mac,
+*[data-sys="android"] .sys-other,
 *[data-sys="ios"] .sys-android,
 *[data-sys="ios"] .sys-win,
 *[data-sys="ios"] .sys-mac,
+*[data-sys="ios"] .sys-other,
+*[data-sys="other"] .sys-win,
+*[data-sys="other"] .sys-mac,
+*[data-sys="other"] .sys-ios,
+*[data-sys="other"] .sys-android,
 *[data-tar="auto"] .tar-alt,
 *[data-tar="nor"] .tar-alt,
 *[data-tar="alt"] .tar-nor, {
@@ -66,10 +73,10 @@ $grid-gutter-half: ($grid-gutter-width / 2) !default;
 
 // animation
 .transition {
-  transition: $transition-base;
+  @include transition($transition-base);
   &::before,
   &::after {
-    transition: $transition-base;
+    @include transition($transition-base);
   }
   &.linear {
     transition-timing-function: linear;
@@ -98,12 +105,6 @@ a {
       margin: 0 auto;
     }
   }
-}
-.flex-row-reverse {
-  flex-direction: row-reverse;
-}
-.flex-col-reverse {
-  flex-direction: column-reverse;
 }
 .center-h,
 .center-v,
@@ -141,7 +142,7 @@ a {
 }
 .inline-block {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
 }
 .empty-holder {
   @extend %empty-holder;
@@ -199,7 +200,8 @@ a {
 }
 
 // cursor
-.with-hand {
+.with-hand,
+[for] {
   cursor: pointer;
 }
 .with-arrow {
@@ -295,12 +297,25 @@ a {
 }
 
 // font and text
+.font-weight-thin {
+  font-weight: 100;
+}
 .font-weight-extra-light {
   font-weight: 200;
+}
+.font-weight-medium {
+  font-weight: 500;
+}
+.font-weight-semi-bold {
+  font-weight: 600;
 }
 .font-weight-extra-bold {
   font-weight: 800;
 }
+.font-weight-black {
+  font-weight: 900;
+}
+
 .font-size-normal {
   font-size: $font-size-base;
 }

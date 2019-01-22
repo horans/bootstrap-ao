@@ -14,58 +14,14 @@ Customized **Bootstrap** **A**dd **O**n styles for common use.
 
 ## Classes
 
-### Condition
-
-* hide/show elements under conditions:
-
-```html
-<div data-dev="desktop">
-  <button class="dev-desktop">show</button>
-  <button class="dev-mobile">hide</button>
-</div>
-```
-
-```html
-<div data-dev="win">
-  <button class="dev-win">show</button>
-  <button class="dev-mac">hide</button>
-</div>
-```
-
-```html
-<div data-dev="ios">
-  <button class="dev-ios">show</button>
-  <button class="dev-andriod">hide</button>
-</div>
-```
-
-```html
-<div data-dev="nor">
-  <button class="dev-nor">show</button>
-  <button class="dev-alt">hide</button>
-</div>
-```
-
-### Animation
-
-* `.transition`: element with transition
-  * `.transition.linear`: transition with linear timing function
-  * `.transition.slow`: transition in 0.4s
-  * `a`: transition as default
-* `spin`: keyframe that rotates
-
 ### Layout
 
 * container: different sizes base on your `$container-max-widths`
   * `container-sm`: container with max width of 540px
   * `container-md`: container with max width of 720px
   * `container-lg`: container with max width of 960px
-  * `container-xl`: container with max width of 1140px
-* flex reverse: reverse direction of flex items
-  * `.flex-row-reverse`
-  * `.flex-col-reverse`
 * centered item:
-  * `.center-absolute`: center item with absolute position
+  * `.center-absolute`: center item with absolute position, width/height needed
   * other combinations:
 
 ```html
@@ -88,17 +44,18 @@ Customized **Bootstrap** **A**dd **O**n styles for common use.
 
 ### Display
 
+* `.parameter`: hide element as ".d-none"
 * `.hide-overflow`: set overflow as "none"
 * `.inline-block`: display as "inline-block" and vertical-align to "top"
 * `.empty-holder`: invisible square that always occupy space
 * `.transparent`: zero opacity
 * `.translucent`: half opacity
-* `.shrink`: container with zero height and zero opacity
+* `.shrink`: element with zero height and zero opacity
   * `.shrink.active`: give 400px max height and full opacity
   * `.shrink.transition`: animate the change
   * `.shrink.shrink-partial`: with 200px max height
-* `.with-full`: an absolute full size elment, same size as its parent
-* `.with-back`: container has background
+* `.with-full`: an absolute full size element, same size as its parent
+* `.with-back`: element has background
 
 ```html
 <div class="with-back">
@@ -106,6 +63,46 @@ Customized **Bootstrap** **A**dd **O**n styles for common use.
   <div>foreground</div>
 </div>
 ```
+
+### Condition
+
+* hide/show elements under conditions:
+
+```html
+<div data-dev="desktop">
+  <button class="dev-desktop">show</button>
+  <button class="dev-mobile">hide</button>
+</div>
+```
+
+```html
+<div data-sys="win">
+  <button class="sys-win">show</button>
+  <button class="sys-mac">hide</button>
+</div>
+```
+
+```html
+<div data-sys="ios">
+  <button class="sys-ios">show</button>
+  <button class="sys-android">hide</button>
+</div>
+```
+
+```html
+<div data-tar="nor">
+  <button class="tar-nor">show</button>
+  <button class="tar-alt">hide</button>
+</div>
+```
+
+### Animation
+
+* `.transition`: element with transition
+  * `.transition.linear`: transition with linear timing function
+  * `.transition.slow`: transition in 0.4s
+  * `a`: transition as default
+* `spin`: keyframe that rotates
 
 ### Shadow
 
@@ -163,8 +160,13 @@ Customized **Bootstrap** **A**dd **O**n styles for common use.
 ### Font and Text
 
 * font weight:
-  * `.font-weight-extra-light`
-  * `.font-weight-extra-bold`
+  * `.font-weight-thin`(100)
+  * `.font-weight-extra-light`(200)
+  * `.font-weight-medium`(500)
+  * `.font-weight-semi-bold`(600)
+  * `.font-weight-extra-bold`(800)
+  * `.font-weight-black`(900)
+
 * font size:
   * `.font-size-normal`(16px)
   * `.font-size-large`(18px), `.font-size-huge`(20px)
@@ -187,6 +189,11 @@ Customized **Bootstrap** **A**dd **O**n styles for common use.
   * `.bg-filter.bg-filter-empty`: container has no children
 
 ## Change Log
+
+```text
+181128
+* add demo page
+```
 
 ```text
 181126

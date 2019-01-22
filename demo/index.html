@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github.min.css">
+    <link rel="stylesheet" href="../dist/bootstrap-ao.min.css">
+    <title>Boostrap AO Demo</title>
+    <style>
+      section:nth-of-type(odd) { background-color: var(--light); } /* csslint allow: known-properties */
+      h1, h2 { text-align: center; text-transform: capitalize; }
+      h3 { font-weight: normal; }
+      h1 + div a:not(:last-of-type)::after { content:  " |"; }
+      dd pre, dd blockquote { margin: 0; max-height: 0; opacity: 0; overflow: hidden; transition: all ease-out 0.4s; }
+      dd:focus pre, dd:focus blockquote { margin-top: 1rem; max-height: 60vh; opacity: 1; overflow: auto; }
+    </style>
+  </head>
+  <body>
+<!--
+/*****************************************************
+*  project: boostrap ao                              *
+*  description: demo page                            *
+*  author: horans@gmail.com                          *
+*  url: https://github.com/horans/bootstrap-ao       *
+*  update: 190122                                    *
+*****************************************************/
+-->
+    <article>
+      <section class="pt-5 pb-5">
+        <div class="container">
+          <h1>Boostrap AO Demo</h1>
+          <div class="text-muted text-center link-inherit">
+            <a target="_blank" href="https://github.com/horans/bootstrap-ao">github.com</a>
+            <a target="_blank" href="../README.md">readme.md</a>
+            <a target="_blank" href="http://getbootstrap.com/docs/4.21/getting-started/introduction/">bootstrap 4</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="pt-5 pb-5">
+        <div class="container">
+          <h2>layout</h2>
+          <dl>
+            <dt>
+              <h3>container</h3>
+            </dt>
+            <dd class="border p-3 mb-3" tabindex="0">
+              <output class="d-block">
+                <div class="container container-sm mt-2 p-3 border border-secondary">.container-sm (540px)</div>
+                <div class="container container-md mt-2 p-3 border border-secondary">.container-md (720px)</div>
+                <div class="container container-lg mt-2 p-3 border border-secondary">.container-lg (960px)</div>
+              </output>
+              <hr>
+              <div class="text-muted with-hand">code</div>
+              <blockquote>different sizes base on your <code>$container-max-widths</code></blockquote>
+              <pre><code class="html">
+&lt;div class="container container-sm"&gt;&lt;/div&gt;
+&lt;div class="container container-md"&gt;&lt;/div&gt;
+&lt;div class="container container-lg"&gt;&lt;/div&gt;
+              </code></pre>
+            </dd>
+            <dt>
+              <h3>centered item</h3>
+            </dt>
+            <dd class="border p-3 mb-3" tabindex="0">
+              <output class="d-block">
+                <div class="row">
+                  <div class="col-12 col-md-4">
+                    <div class="center-h border border-secondary" style="height:15vh">
+                      <div class="center-e">horizontal centered</div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <div class="center-v border border-secondary" style="height:15vh">
+                      <div class="center-e">vertical centered</div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <div class="center-a border border-secondary" style="height:15vh">
+                      <div class="center-e">all centered</div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="position-relative" style="height:15vh">
+                  <div class="center-absolute border border-gray-3 p-3 text-center" style="width:40%;height:3.5rem">absolute centered</div>
+                </div>
+              </output>
+              <hr>
+              <div class="text-muted with-hand">code</div>
+              <blockquote>width/height needed for <code>.center-absolute</code></blockquote>
+              <pre><code class="html">
+&lt;div class="center-h"&gt;
+  &lt;div class="center-e"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="center-v"&gt;
+  &lt;div class="center-e"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="center-a"&gt;
+  &lt;div class="center-e"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="position-relative"&gt;
+  &lt;div class="center-absolute"&gt;&lt;/div&gt;
+&lt;/div&gt;
+              </code></pre>
+            </dd>
+          </dl>
+        </div>
+      </section>
+    </article>
+
+      <section class="pt-5 pb-5">
+        <div class="container">
+          <h2>Display</h2>
+          <dl>
+            <dt>
+              <h3>condition</h3>
+            </dt>
+            <dd class="border p-3 mb-3" tabindex="0">
+              <output class="d-block">
+                <div class="row">
+                  <div class="col-12 col-md-3">
+                    <div data-dev="desktop">
+                      <button class="btn btn-outline-info dev-desktop">.dev-desktop (show)</button>
+                      <button class="btn btn-info dev-mobile">.dev-mobile (hide)</button>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div data-sys="win">
+                      <button class="btn btn-outline-success sys-win">.sys-win (show)</button>
+                      <button class="btn btn-success sys-mac">.sys-mac (hide)</button>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div data-sys="ios">
+                      <button class="btn btn-outline-warning sys-ios">.sys-ios (show)</button>
+                      <button class="btn btn-warning sys-android">.sys-android (hide)</button>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div data-tar="nor">
+                      <button class="btn btn-outline-danger tar-nor">.tar-nor (show)</button>
+                      <button class="btn btn-danger tar-alt">.tar-alt (hide)</button>
+                    </div>
+                  </div>
+                </div>
+              </output>
+              <hr>
+              <div class="text-muted with-hand">code</div>
+              <blockquote>hide/show elements under conditions</blockquote>
+              <pre><code class="html">
+&lt;div data-dev="desktop"&gt;
+  &lt;button class="dev-desktop"&gt;show&lt;/button&gt;
+  &lt;button class="dev-mobile"&gt;hide&lt;/button&gt;
+&lt;/div&gt;
+&lt;div data-sys="win"&gt;
+  &lt;button class="sys-win"&gt;show&lt;/button&gt;
+  &lt;button class="sys-mac"&gt;hide&lt;/button&gt;
+&lt;/div&gt;
+&lt;div data-sys="ios"&gt;
+  &lt;button class="sys-ios"&gt;show&lt;/button&gt;
+  &lt;button class="sys-android"&gt;hide&lt;/button&gt;
+&lt;/div&gt;
+&lt;div data-tar="nor"&gt;
+  &lt;button class="tar-nor"&gt;show&lt;/button&gt;
+  &lt;button class="tar-alt"&gt;hide&lt;/button&gt;
+&lt;/div&gt;
+              </code></pre>
+            </dd>
+            <dt>
+              <h3></h3>
+            </dt>
+            <dd></dd>
+          </dl>
+        </div>
+      </section>
+
+      <section class="pt-5 pb-5">
+        <div class="container">
+          <h2>animation</h2>
+          <dl>
+            <dt></dt>
+            <dd class="border p-3 mb-3" tabindex="0">
+              <output class="d-block">
+                <style>.transition:hover, a[href="#"]:hover { background-color: orange; }</style>
+                <div class="row">
+                  <div class="col-12 col-md-3">
+                    <div class="transition p-3 border border-secondary">.transition (hover)</div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div class="transition linear p-3 border border-secondary">.transition.linear</div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <div class="transition slow p-3 border border-secondary">.transition.slow</div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <a class="d-block p-3 border border-secondary" href="#">link</a>
+                  </div>
+                  <div class="col-12 mt-3">
+                    <div class="text-center p-3">
+                      <style>.spin { animation: 0.9s linear infinite spin; }</style>
+                      <span class="d-inline-block empty-holder spin border border-secondary"></span>
+                    </div>
+                  </div>
+                </div>
+              </output>
+              <hr>
+              <div class="text-muted with-hand">code</div>
+              <pre><code class="html">
+&lt;style&gt;.transition:hover, a:hover { background-color: orange; }&lt;/style&gt;
+&lt;div class="transition"&gt;&lt;/div&gt;
+&lt;div class="transition linear"&gt;&lt;/div&gt;
+&lt;div class="transition slow"&gt;&lt;/div&gt;
+&lt;a href="#"&gt;link&lt;/a&gt;
+
+&lt;style&gt;.spin { animation: 0.9s linear infinite spin; }&lt;/style&gt;
+&lt;span class="spin"&gt;&lt;/span&gt;
+              </code></pre>
+            </dd>
+          </dl>
+        </div>
+      </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+<script>/* global hljs */
+hljs.initHighlightingOnLoad()
+</script>
+  </body>
+</html>

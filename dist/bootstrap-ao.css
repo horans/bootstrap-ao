@@ -3,7 +3,7 @@
 *  description: css file for distribution            *
 *  author: horans@gmail.com                          *
 *  url: https://github.com/horans/bootstrap-ao       *
-*  update: 181126                                    *
+*  update: 190122                                    *
 *****************************************************/
 .empty-holder::before {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -16,18 +16,27 @@
 *[data-sys="auto"] .sys-mac,
 *[data-sys="auto"] .sys-ios,
 *[data-sys="auto"] .sys-android,
+*[data-sys="auto"] .sys-other,
 *[data-sys="win"] .sys-mac,
 *[data-sys="win"] .sys-ios,
 *[data-sys="win"] .sys-android,
+*[data-sys="win"] .sys-other,
 *[data-sys="mac"] .sys-win,
 *[data-sys="mac"] .sys-ios,
 *[data-sys="mac"] .sys-android,
+*[data-sys="mac"] .sys-other,
 *[data-sys="android"] .sys-ios,
 *[data-sys="android"] .sys-win,
 *[data-sys="android"] .sys-mac,
+*[data-sys="android"] .sys-other,
 *[data-sys="ios"] .sys-android,
 *[data-sys="ios"] .sys-win,
 *[data-sys="ios"] .sys-mac,
+*[data-sys="ios"] .sys-other,
+*[data-sys="other"] .sys-win,
+*[data-sys="other"] .sys-mac,
+*[data-sys="other"] .sys-ios,
+*[data-sys="other"] .sys-android,
 *[data-tar="auto"] .tar-alt,
 *[data-tar="nor"] .tar-alt,
 *[data-tar="alt"] .tar-nor, .parameter {
@@ -39,8 +48,20 @@
   transition: all 0.2s ease-in-out;
 }
 
+@media screen and (prefers-reduced-motion: reduce) {
+  .transition, a {
+    transition: none;
+  }
+}
+
 .transition::before, a::before, .transition::after, a::after {
   transition: all 0.2s ease-in-out;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .transition::before, a::before, .transition::after, a::after {
+    transition: none;
+  }
 }
 
 .transition.linear, a.linear {
@@ -101,16 +122,6 @@
   }
 }
 
-.flex-row-reverse {
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-}
-
-.flex-col-reverse {
-  -ms-flex-direction: column-reverse;
-  flex-direction: column-reverse;
-}
-
 .center-h,
 .center-v,
 .center-a {
@@ -157,7 +168,7 @@
 
 .inline-block {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 .transparent {
@@ -221,7 +232,8 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
 }
 
-.with-hand {
+.with-hand,
+[for] {
   cursor: pointer;
 }
 
@@ -551,12 +563,28 @@
   border-color: #caced1 !important;
 }
 
+.font-weight-thin {
+  font-weight: 100;
+}
+
 .font-weight-extra-light {
   font-weight: 200;
 }
 
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.font-weight-semi-bold {
+  font-weight: 600;
+}
+
 .font-weight-extra-bold {
   font-weight: 800;
+}
+
+.font-weight-black {
+  font-weight: 900;
 }
 
 .font-size-normal {
@@ -675,4 +703,3 @@
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
-/*# sourceMappingURL=bootstrap.css.map */
